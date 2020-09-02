@@ -3,6 +3,7 @@ using devboost.dronedelivery.felipe.Security;
 using devboost.dronedelivery.felipe.Security.Interfaces;
 using Microsoft.Extensions.Options;
 using NSubstitute;
+using NSubstitute.ReceivedExtensions;
 using System.Configuration;
 using System.Threading.Tasks;
 using Xunit;
@@ -47,6 +48,24 @@ namespace devboost.dronedelivery.test
             Assert.IsType<string>(token.AccessToken);
             Assert.IsType<Token>(token);
 
+        }
+
+        [Fact]
+        public void CheckPasswordUserAsnc()
+        {
+            _loginValidator.CheckPasswordUserAsnc(Arg.Any<ApplicationUser>(), Arg.Any<string>()).Returns(true);
+        }
+
+        [Fact]
+        public void GetUserById()
+        {
+            _loginValidator.GetUserById(Arg.Any<string>()).Returns(new ApplicationUser());
+        }
+
+        [Fact]
+        public void ValidateRoleAsnc()
+        {
+            _loginValidator.ValidateRoleAsnc(Arg.Any<ApplicationUser>(), Arg.Any<string>()).Returns(true);
         }
     }
 }

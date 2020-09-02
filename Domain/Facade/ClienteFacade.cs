@@ -5,9 +5,6 @@ namespace devboost.dronedelivery.felipe.Facade
 {
     public class ClienteFacade : IClienteFacade
     {
-        public string NomeCliente()
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

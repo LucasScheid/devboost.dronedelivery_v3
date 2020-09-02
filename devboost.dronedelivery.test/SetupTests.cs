@@ -76,7 +76,7 @@ namespace devboost.dronedelivery.test
                 Id = 1,
                 Latitude = -19.9539424,
                 Longitude = -43.9750544,
-                Password = "",
+                Password = "AdminAPIDrone01!",
                 UserId = "Felipe"
 
             };
