@@ -7,6 +7,11 @@ namespace devboost.dronedelivery.felipe.EF.Data
 {
     public class DataContext : DbContext
     {
+        public DataContext()
+        {
+
+        }
+
         public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
