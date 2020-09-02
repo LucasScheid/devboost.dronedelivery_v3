@@ -45,7 +45,7 @@ namespace devboost.dronedelivery.test
         {
             return new felipe.DTO.Models.Pedido()
             {
-                Cliente = new Cliente()
+                Cliente = new felipe.DTO.Models.Cliente()
                 {
                     Nome = "Felipe",
                     Id = 1,
@@ -68,9 +68,9 @@ namespace devboost.dronedelivery.test
             };
         }
 
-        public static Cliente GetCliente()
+        public static felipe.DTO.Models.Cliente GetCliente()
         {
-            return new Cliente()
+            return new felipe.DTO.Models.Cliente()
             {
                 Nome = "Felipe",
                 Id = 1,
