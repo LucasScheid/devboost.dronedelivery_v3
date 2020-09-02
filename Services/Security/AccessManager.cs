@@ -1,36 +1,38 @@
-﻿using devboost.dronedelivery.felipe.DTO.Models;
+﻿using devboost.dronedelivery.felipe.DTO.Extensions;
+using devboost.dronedelivery.felipe.DTO.Models;
+using devboost.dronedelivery.felipe.Security.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Principal;
+using System.Threading.Tasks;
 
 namespace devboost.dronedelivery.felipe.Security
 {
     public class AccessManager
     {
-        private UserManager<ApplicationUser> _userManager;
-        private SignInManager<ApplicationUser> _signInManager;
-        private SigningConfigurations _signingConfigurations;
-        private TokenConfigurations _tokenConfigurations;
-
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SigningConfigurations _signingConfigurations;
+        private readonly TokenConfigurations _tokenConfigurations;
+        private readonly ILoginValidator _loginValidator;
         public AccessManager(
             UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager,
             SigningConfigurations signingConfigurations,
-            TokenConfigurations tokenConfigurations)
+            TokenConfigurations tokenConfigurations,
+            ILoginValidator loginValidator)
         {
             _userManager = userManager;
-            _signInManager = signInManager;
             _signingConfigurations = signingConfigurations;
             _tokenConfigurations = tokenConfigurations;
+            _loginValidator = loginValidator;
         }
 
-        public bool ValidateCredentials(Cliente user)
+        public async Task<bool> ValidateCredentials(Cliente user)
         {
             bool credenciaisValidas = false;
-            if (user != null && !String.IsNullOrWhiteSpace(user.UserId))
+            if (!user.IsUserEmpty())
             {
                 // Verifica a existência do cliente nas tabelas do
                 // ASP.NET Core Identity
@@ -39,10 +41,9 @@ namespace devboost.dronedelivery.felipe.Security
                 if (userIdentity != null)
                 {
                     // Efetua o login com base no Id do usuário e sua senha
-                    var resultadoLogin = _signInManager
-                        .CheckPasswordSignInAsync(userIdentity, user.Password, false)
-                        .Result;
-                    if (resultadoLogin.Succeeded)
+                    var resultadoLogin = await _loginValidator
+                        .CheckUserAndPassword(userIdentity, user.Password, false);
+                    if (resultadoLogin)
                     {
                         // Verifica se o cliente em questão possui
                         // Roles.ROLE_API_DRONE
