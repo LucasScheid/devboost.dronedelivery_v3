@@ -1,10 +1,9 @@
 ﻿using devboost.dronedelivery.felipe.DTO.Models;
 using devboost.dronedelivery.felipe.Security;
 using devboost.dronedelivery.felipe.Security.Interfaces;
+using Microsoft.Extensions.Options;
 using NSubstitute;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Configuration;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -32,6 +31,22 @@ namespace devboost.dronedelivery.test
             _loginValidator.ValidateRoleAsnc(Arg.Any<ApplicationUser>(), Arg.Any<string>()).Returns(true);
             var valid = await accessManager.ValidateCredentials(SetupTests.GetCliente());
             Assert.True(valid);
+        }
+
+        [Fact]
+        public void GenerateToken()
+        {
+            _tokenConfigurations.Audience = "ExemploAudience";
+            _tokenConfigurations.Issuer = "ExemploIssuer";
+            _tokenConfigurations.Seconds = 90;
+
+            var accessManager = new AccessManager(_signingConfigurations, _tokenConfigurations, _loginValidator);
+            var token = accessManager.GenerateToken(SetupTests.GetCliente());
+
+            Assert.True(token.Authenticated);
+            Assert.IsType<string>(token.AccessToken);
+            Assert.IsType<Token>(token);
+
         }
     }
 }
