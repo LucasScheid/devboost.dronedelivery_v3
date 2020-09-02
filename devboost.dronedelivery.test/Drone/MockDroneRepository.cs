@@ -58,7 +58,6 @@ namespace devboost.dronedelivery.test.Drone
 
         public void SaveDrone(felipe.DTO.Models.Drone drone)
         {
-            throw new NotImplementedException();
         }
     }
 }

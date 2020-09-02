@@ -2,18 +2,36 @@
 using devboost.dronedelivery.felipe.DTO.Enums;
 using devboost.dronedelivery.felipe.DTO.Models;
 using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
+using devboost.dronedelivery.felipe.Facade;
 using devboost.dronedelivery.felipe.Services;
 using devboost.dronedelivery.felipe.Services.Interfaces;
+using devboost.dronedelivery.test.Drone;
 using Microsoft.EntityFrameworkCore.Internal;
 using Moq;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
+
 namespace devboost.dronedelivery.test
 {
     public class CriacaoDroneTest
     {
+        [Fact]
+        public void CriarDrone()
+        {
+            IDroneService _droneService = null;
+            IDroneRepository _droneRepository = new MockDroneRepository();
+
+            DroneFacade droneFacade = new DroneFacade(_droneService, _droneRepository);
+
+
+            devboost.dronedelivery.felipe.DTO.Models.Drone drone = new devboost.dronedelivery.felipe.DTO.Models.Drone { Autonomia =120, Velocidade = 80};
+            droneFacade.SaveDrone(drone);
+
+            Assert.True(drone.Perfomance == 160);
+        }
+
         [Theory]
         [InlineData(50, 30, 10, true, "O drone deveria aceitar esta carga")]
         [InlineData(50, 30, 20, true, "O drone deveria aceitar esta carga")]
@@ -71,8 +89,8 @@ namespace devboost.dronedelivery.test
         [Fact]
         public void RetornarStatusDrone()
         {
-            StatusDroneDto sddUm = new StatusDroneDto { ClienteId = 1, PedidoId = 1};
-            StatusDroneDto sddDois = new StatusDroneDto { ClienteId = 2, PedidoId = 2};
+            StatusDroneDto sddUm = new StatusDroneDto { ClienteId = 1, PedidoId = 1 };
+            StatusDroneDto sddDois = new StatusDroneDto { ClienteId = 2, PedidoId = 2 };
 
             List<StatusDroneDto> listSdd = new List<StatusDroneDto> { sddUm, sddDois };
 

@@ -23,7 +23,6 @@ namespace devboost.dronedelivery.felipe.Controllers
             _droneRepository = droneRepository;            
         }
 
-
         [HttpGet("GetStatusDrone")]
         [AllowAnonymous]
         public ActionResult<List<StatusDroneDto>> GetStatusDrone()
@@ -34,11 +33,7 @@ namespace devboost.dronedelivery.felipe.Controllers
         [HttpPost]
         public async Task<ActionResult<Drone>> PostDrone(Drone drone)
         {
-            drone.Perfomance = (drone.Autonomia / 60.0f) * drone.Velocidade;
-
-             _droneRepository.SaveDrone(drone);
-
-            return drone;
+             return _droneFacade.SaveDrone(drone);
         }
     }
 }
