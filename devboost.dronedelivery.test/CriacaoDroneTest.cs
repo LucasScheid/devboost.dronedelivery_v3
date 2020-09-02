@@ -73,5 +73,27 @@ namespace devboost.dronedelivery.test
             Assert.True(!existepedidoComStatusDiferenteDeFinalizado);
 
         }
+
+        [Fact]
+        public void RetornarStatusDrone()
+        {
+            StatusDroneDto sddUm = new StatusDroneDto { ClienteId = 1, PedidoId = 1};
+            StatusDroneDto sddDois = new StatusDroneDto { ClienteId = 2, PedidoId = 2};
+
+            List<StatusDroneDto> listSdd = new List<StatusDroneDto> { sddUm, sddDois };
+
+            var _droneRepository = new Mock<IDroneRepository>();
+            _droneRepository.Setup(_ => _.GetDroneStatusAsync()).Returns(listSdd);
+
+            ICoordinateService _coordinateService = null;
+            IPedidoDroneRepository _pedidoDroneRepository = null;
+            IPedidoRepository _pedidoRepository = null;
+
+            var droneService = new DroneService(_coordinateService, _pedidoDroneRepository, _droneRepository.Object, _pedidoRepository);
+
+            var result = droneService.GetDroneStatusAsync();
+
+            Assert.True(result.Count() == 2, "A quantidade de registros retornados não esperada");
+        }
     }
 }
