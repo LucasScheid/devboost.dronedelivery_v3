@@ -31,16 +31,20 @@ namespace devboost.dronedelivery.felipe.Facade
         }
         public async Task AssignDrone(IPedidoRepository _pedidoRepository)
         {
-            var pedidos = await PegaPedidosAsync();
-
-            foreach (var pedido in pedidos)
+            var pedidos = _pedidoRepository.ObterPedidos((int)StatusPedido.AGUARDANDO);
+            if (pedidos?.Count > 0)
             {
-                var cliente = _clienteRepository.GetCliente(pedido.ClienteId);
-                pedido.Cliente = cliente;
-                var drone = await _pedidoService.DroneAtendePedido(pedido);
-
-                 await AtualizaPedidoAsync(pedido);
-                 await AdicionarPedidoDrone(pedido, drone);
+                foreach (var pedido in pedidos)
+                {
+                    var cliente = _clienteRepository.GetCliente(pedido.ClienteId);
+                    pedido.Cliente = cliente;
+                    var drone = await _pedidoService.DroneAtendePedido(pedido);
+                    if (drone != null)
+                    {
+                        await AtualizaPedidoAsync(pedido);
+                        await AdicionarPedidoDrone(pedido, drone);
+                    }
+                }
             }
         }
 
