@@ -9,6 +9,16 @@ namespace devboost.dronedelivery.test
 {
     public static class SetupTests
     {
+
+        public static DroneStatusDto GetDroneStatusDto()
+        {
+            return new DroneStatusDto()
+            {
+                Drone = GetDrone(),
+                SomaDistancia = 5,
+                SomaPeso = 10
+            };
+        }
         public static PedidoDrone GetPedidoDrone(StatusEnvio statusEnvio)
         {
             return new PedidoDrone()

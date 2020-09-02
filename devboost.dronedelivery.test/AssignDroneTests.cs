@@ -129,12 +129,7 @@ namespace devboost.dronedelivery.test
                 .Returns(10);
             _pedidoDroneRepository.RetornaPedidosEmAberto().Returns(SetupTests.GetPedidoDrones(StatusEnvio.AGUARDANDO));
             _droneRepository.RetornaDroneStatus(Arg.Any<int>())
-                .Returns(new DroneStatusDto() 
-                { 
-                    Drone = SetupTests.GetDrone(),
-                    SomaDistancia = 5,
-                    SomaPeso = 10
-                });
+                .Returns(SetupTests.GetDroneStatusDto());
             var drone = await pedidoService.DroneAtendePedido(SetupTests.GetPedido());
             Assert.True(drone != null);
         }
