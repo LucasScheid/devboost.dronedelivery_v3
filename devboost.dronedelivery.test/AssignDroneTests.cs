@@ -1,7 +1,10 @@
-﻿using devboost.dronedelivery.felipe.DTO.Models;
+﻿using devboost.dronedelivery.felipe.DTO;
+using devboost.dronedelivery.felipe.DTO.Enums;
+using devboost.dronedelivery.felipe.DTO.Models;
 using devboost.dronedelivery.felipe.EF.Data;
 using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
 using devboost.dronedelivery.felipe.Facade;
+using devboost.dronedelivery.felipe.Services;
 using devboost.dronedelivery.felipe.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using NSubstitute;
@@ -20,6 +23,9 @@ namespace devboost.dronedelivery.test
         private readonly IPedidoService _pedidoService;
         private readonly IPedidoRepository _pedidoRepository;
         private readonly IDroneRepository _droneRepository;
+        private readonly IDroneService _droneService;
+        private readonly ICoordinateService _coordinateService;
+        private readonly IPedidoDroneRepository _pedidoDroneRepository;
         public AssignDroneTests()
         {
             _dataContext = Substitute.For<DataContext>();
@@ -28,7 +34,10 @@ namespace devboost.dronedelivery.test
             _clienteRepository = Substitute.For<IClienteRepository>();
             _pedidoService = Substitute.For<IPedidoService>();
             _droneRepository = Substitute.For<IDroneRepository>();
+            _droneService = Substitute.For<IDroneService>();
             _pedidoRepository = Substitute.For<IPedidoRepository>();
+            _coordinateService = Substitute.For<ICoordinateService>();
+            _pedidoDroneRepository = Substitute.For<IPedidoDroneRepository>();
         }
 
         [Fact]
@@ -106,6 +115,28 @@ namespace devboost.dronedelivery.test
 
 
             _dataContext.Pedido.DidNotReceive().Update(Arg.Any<Pedido>());
+        }
+
+        [Fact]
+        public async Task TestDroneAtendePedidoQuandoDroneExiste()
+        {
+            var droneService = new DroneService(_coordinateService,
+                _pedidoDroneRepository,
+                _droneRepository,
+                _pedidoRepository);
+            var pedidoService = new PedidoService(droneService, _coordinateService);
+            _coordinateService.GetKmDistance(Arg.Any<Point>(), Arg.Any<Point>())
+                .Returns(10);
+            _pedidoDroneRepository.RetornaPedidosEmAberto().Returns(SetupTests.GetPedidoDrones(StatusEnvio.AGUARDANDO));
+            _droneRepository.RetornaDroneStatus(Arg.Any<int>())
+                .Returns(new DroneStatusDto() 
+                { 
+                    Drone = SetupTests.GetDrone(),
+                    SomaDistancia = 5,
+                    SomaPeso = 10
+                });
+            var drone = await pedidoService.DroneAtendePedido(SetupTests.GetPedido());
+            Assert.True(drone != null);
         }
 
     }
