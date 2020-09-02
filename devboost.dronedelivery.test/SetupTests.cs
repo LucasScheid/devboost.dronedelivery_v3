@@ -3,7 +3,6 @@ using devboost.dronedelivery.felipe.DTO.Enums;
 using devboost.dronedelivery.felipe.DTO.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace devboost.dronedelivery.test
 {
@@ -63,8 +62,8 @@ namespace devboost.dronedelivery.test
         }
         public static List<felipe.DTO.Models.Pedido> GetPedidosList()
         {
-            return new List<felipe.DTO.Models.Pedido>() { 
-                GetPedido() 
+            return new List<felipe.DTO.Models.Pedido>() {
+                GetPedido()
             };
         }
 
@@ -77,10 +76,52 @@ namespace devboost.dronedelivery.test
                 Latitude = -19.9539424,
                 Longitude = -43.9750544,
                 Password = "",
-                UserId = ""
+                UserId = "teste"
 
             };
         }
+
+        public static List<felipe.DTO.Models.Cliente> GetClientes()
+        {
+            return new List<felipe.DTO.Models.Cliente>()
+            {
+                GetCliente()
+            };
+        }
+
+        public static List<StatusDroneDto> GetDroneStatus()
+        {
+            List<StatusDroneDto> statusDroneDtos = new List<StatusDroneDto>();
+
+            StatusDroneDto statusDroneDto = new StatusDroneDto
+            {
+                ClienteId = 1,
+                DroneId = 1,
+                Latitude = -23.5880684,
+                Longitude = -46.6564195,
+                Situacao = true,
+                PedidoId = 0,
+                Nome = string.Empty
+            };
+
+            statusDroneDtos.Add(statusDroneDto);
+
+            StatusDroneDto statusDroneDto2 = new StatusDroneDto
+            {
+                ClienteId = 1,
+                DroneId = 1,
+                Latitude = -23.5880684,
+                Longitude = -46.6564195,
+                Situacao = false,
+                PedidoId = 1,
+                Nome = "João da Silva"
+            };
+
+            statusDroneDtos.Add(statusDroneDto2);
+
+            return statusDroneDtos;
+        }
+
 
         public static felipe.DTO.Models.Drone GetDrone()
         {
@@ -90,7 +131,7 @@ namespace devboost.dronedelivery.test
                 Autonomia = 100,
                 Capacidade = 100,
                 Carga = 100,
-                Perfomance = (100 / 60.0f) *100,
+                Perfomance = (100 / 60.0f) * 100,
                 Velocidade = 100
             };
         }
