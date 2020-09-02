@@ -1,5 +1,4 @@
 ﻿using devboost.dronedelivery.felipe.DTO.Enums;
-using devboost.dronedelivery.felipe.DTO.Models;
 using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
 using System;
 using Xunit;
@@ -16,7 +15,7 @@ namespace devboost.dronedelivery.test.Pedido
             string clientePassword = "12543GTFrd@65";
             int pedidoId = 1;
 
-            Cliente cliente = new Cliente
+            felipe.DTO.Models.Cliente cliente = new felipe.DTO.Models.Cliente
             {
                 Id = pedidoId,
                 Latitude = -23.5880684,

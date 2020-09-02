@@ -1,6 +1,7 @@
 ﻿using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
 using devboost.dronedelivery.felipe.Services;
 using devboost.dronedelivery.felipe.Services.Interfaces;
+using NSubstitute;
 using Xunit;
 
 namespace devboost.dronedelivery.test.Drone
@@ -12,7 +13,8 @@ namespace devboost.dronedelivery.test.Drone
         {
             ICoordinateService coordinateService = new CoordinateService();
             IPedidoDroneRepository pedidoDroneRepository = null;
-            IDroneRepository droneRepository = new MockDroneRepository();
+            IDroneRepository droneRepository = new MockDroneRepository();             
+
             IPedidoRepository pedidoRepository = null;
 
             IDroneService droneService = new DroneService(coordinateService, pedidoDroneRepository, droneRepository, pedidoRepository);
