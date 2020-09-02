@@ -1,6 +1,5 @@
 ﻿using devboost.dronedelivery.felipe.DTO;
 using devboost.dronedelivery.felipe.DTO.Models;
-using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
 using devboost.dronedelivery.felipe.Facade.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -15,12 +14,11 @@ namespace devboost.dronedelivery.felipe.Controllers
     public class DronesController : ControllerBase
     {
         private readonly IDroneFacade _droneFacade;
-        private readonly IDroneRepository _droneRepository;
 
-        public DronesController(IDroneRepository droneRepository, IDroneFacade droneFacade)
+
+        public DronesController(IDroneFacade droneFacade)
         {
             _droneFacade = droneFacade;
-            _droneRepository = droneRepository;            
         }
 
         [HttpGet("GetStatusDrone")]
@@ -29,11 +27,11 @@ namespace devboost.dronedelivery.felipe.Controllers
         {
             return Ok(_droneFacade.GetDroneStatusAsync());
         }
-      
+
         [HttpPost]
         public async Task<ActionResult<Drone>> PostDrone(Drone drone)
         {
-             return _droneFacade.SaveDrone(drone);
+            return _droneFacade.SaveDrone(drone);
         }
     }
 }
