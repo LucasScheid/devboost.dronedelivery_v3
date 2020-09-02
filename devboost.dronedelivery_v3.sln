@@ -30,7 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{741CB76B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5F541154-C042-4943-92F2-3468BD9F06F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "devboost.dronedelivery.test", "devboost.dronedelivery.test\devboost.dronedelivery.test.csproj", "{0BC30A0D-A521-4571-8E8D-F9F7FA9D98B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "devboost.dronedelivery.test", "devboost.dronedelivery.test\devboost.dronedelivery.test.csproj", "{0BC30A0D-A521-4571-8E8D-F9F7FA9D98B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
