@@ -71,7 +71,7 @@ namespace devboost.dronedelivery.felipe.Services
             return _droneRepository.GetDroneStatusAsync().ToList();
         }
 
-        private async Task FinalizaPedidosAsync()
+        public async Task FinalizaPedidosAsync()
         {
             var pedidos = _pedidoDroneRepository.RetornaPedidosParaFecharAsync();
 
@@ -85,7 +85,7 @@ namespace devboost.dronedelivery.felipe.Services
             }
         }
 
-        private bool ConsegueCarregar(DroneStatusDto droneStatus,
+        public bool ConsegueCarregar(DroneStatusDto droneStatus,
             double PedidoDroneDistance,
             double DistanciaRetorno,
             Pedido pedido)
@@ -95,12 +95,12 @@ namespace devboost.dronedelivery.felipe.Services
                     && ValidaPeso(droneStatus, pedido);
         }
 
-        private static bool ValidaPeso(DroneStatusDto droneStatus, Pedido pedido)
+        public static bool ValidaPeso(DroneStatusDto droneStatus, Pedido pedido)
         {
             return droneStatus.SomaPeso + pedido.Peso < droneStatus.Drone.Capacidade;
         }
 
-        private static bool ValidaDistancia(DroneStatusDto droneStatus, double PedidoDroneDistance, double DistanciaRetorno)
+        public static bool ValidaDistancia(DroneStatusDto droneStatus, double PedidoDroneDistance, double DistanciaRetorno)
         {
             return droneStatus.SomaDistancia + DistanciaRetorno + PedidoDroneDistance < droneStatus.Drone.Perfomance;
         }
