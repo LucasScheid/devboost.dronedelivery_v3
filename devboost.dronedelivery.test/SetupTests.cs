@@ -77,7 +77,7 @@ namespace devboost.dronedelivery.test
                 Latitude = -19.9539424,
                 Longitude = -43.9750544,
                 Password = "",
-                UserId = ""
+                UserId = "Felipe"
 
             };
         }
