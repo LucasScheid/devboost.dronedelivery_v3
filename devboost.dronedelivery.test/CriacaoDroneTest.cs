@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using System.Linq;
+using devboost.dronedelivery.felipe.Services.Interfaces;
 
 namespace devboost.dronedelivery.test
 {
@@ -21,15 +22,15 @@ namespace devboost.dronedelivery.test
 
         [Theory]
         [InlineData(50, 30, 10, true, "O drone deveria aceitar esta carga")]
-        [InlineData(50, 30, 20, true,  "O drone deveria aceitar esta carga")]
-        [InlineData(50, 30, 30,false,  "O drone NÃO deveria aceitar esta carga")]
+        [InlineData(50, 30, 20, true, "O drone deveria aceitar esta carga")]
+        [InlineData(50, 30, 30, false, "O drone NÃO deveria aceitar esta carga")]
         public void ValidarPeso(int capacidadeDrone, int droneSomaPeso, int pedidoPeso, bool resultadoEsperado, string mensagemErro)
         {
             var drone = new Drone { Id = 1, Capacidade = capacidadeDrone, Velocidade = 40, Autonomia = 50, Carga = 80, Perfomance = 33.3F };
 
-            DroneStatusDto dtoDroneStatus = new DroneStatusDto { Drone = drone, SomaDistancia = 50, SomaPeso = droneSomaPeso};
+            DroneStatusDto dtoDroneStatus = new DroneStatusDto { Drone = drone, SomaDistancia = 50, SomaPeso = droneSomaPeso };
 
-            Pedido pedido = new Pedido {ClienteId = 1, Peso = pedidoPeso };
+            Pedido pedido = new Pedido { ClienteId = 1, Peso = pedidoPeso };
 
             Assert.True(resultadoEsperado == DroneService.ValidaPeso(dtoDroneStatus, pedido), mensagemErro);
         }
@@ -39,11 +40,11 @@ namespace devboost.dronedelivery.test
         [InlineData(8, 2, 5, 20, true, "O drone deveria aceitar esta distancia")]
         [InlineData(8, 2, 5, 15, true, "O drone deveria aceitar esta distancia")]
         [InlineData(8, 2, 5, 10, false, "O drone NÃO deveria aceitar esta distancia")]
-        public void ValidarDistancia(int somaDistancia,   double distanciaRetorno, double pedidoDroneDistancia, float performanceDrone, bool resultadoEsperado,  string mensagemErro)
+        public void ValidarDistancia(int somaDistancia, double distanciaRetorno, double pedidoDroneDistancia, float performanceDrone, bool resultadoEsperado, string mensagemErro)
         {
             var drone = new Drone { Id = 1, Capacidade = 500, Velocidade = 40, Autonomia = 50, Carga = 80, Perfomance = performanceDrone };
 
-            DroneStatusDto dtoDroneStatus = new DroneStatusDto { Drone = drone, SomaDistancia = somaDistancia, SomaPeso = 300};
+            DroneStatusDto dtoDroneStatus = new DroneStatusDto { Drone = drone, SomaDistancia = somaDistancia, SomaPeso = 300 };
 
             Assert.True(resultadoEsperado == DroneService.ValidaDistancia(dtoDroneStatus, distanciaRetorno, pedidoDroneDistancia), mensagemErro);
         }
@@ -51,15 +52,25 @@ namespace devboost.dronedelivery.test
         [Fact]
         public void finalizaPedido()
         {
-            PedidoDrone pedidoUm = new PedidoDrone() {Id=1, StatusEnvio = (int)StatusEnvio.EM_TRANSITO}; 
-            PedidoDrone pedidoDois = new PedidoDrone() {Id=2, StatusEnvio = (int)StatusEnvio.EM_TRANSITO};
+            PedidoDrone pedidoUm = new PedidoDrone() { Id = 1, StatusEnvio = (int)StatusEnvio.EM_TRANSITO };
+            PedidoDrone pedidoDois = new PedidoDrone() { Id = 2, StatusEnvio = (int)StatusEnvio.EM_TRANSITO };
 
             List<PedidoDrone> listPedidoDrones = new List<PedidoDrone> { pedidoUm, pedidoDois };
 
             var _pedidoDroneRepository = new Mock<IPedidoDroneRepository>();
             _pedidoDroneRepository.Setup(_ => _.RetornaPedidosParaFecharAsync()).Returns(listPedidoDrones);
 
-            //Assert.Contains(false, listPedidoDrones.Any(p => p.StatusEnvio != (int)StatusEnvio.FINALIZADO)); 
+            ICoordinateService _coordinateService = null;
+            IDroneRepository _droneRepository = null;
+            IPedidoRepository _pedidoRepository = null;
+
+            var droneService = new DroneService(_coordinateService, _pedidoDroneRepository.Object, _droneRepository, _pedidoRepository);
+
+            droneService.FinalizaPedidosAsync().Wait();
+
+            var existepedidoComStatusDiferenteDeFinalizado = listPedidoDrones.Any(_ => _.StatusEnvio != (int)StatusEnvio.FINALIZADO);
+
+            Assert.True(!existepedidoComStatusDiferenteDeFinalizado);
 
         }
     }

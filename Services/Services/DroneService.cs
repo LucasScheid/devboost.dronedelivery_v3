@@ -71,7 +71,7 @@ namespace devboost.dronedelivery.felipe.Services
             return _droneRepository.GetDroneStatusAsync().ToList();
         }
 
-        private async Task FinalizaPedidosAsync()
+        public async Task FinalizaPedidosAsync()
         {
             var pedidos = _pedidoDroneRepository.RetornaPedidosParaFecharAsync();
 
