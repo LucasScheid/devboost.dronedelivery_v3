@@ -7,6 +7,7 @@ using devboost.dronedelivery.felipe.Facade;
 using devboost.dronedelivery.felipe.Facade.Interface;
 using devboost.dronedelivery.felipe.Security;
 using devboost.dronedelivery.felipe.Security.Extensions;
+using devboost.dronedelivery.felipe.Security.Interfaces;
 using devboost.dronedelivery.felipe.Services;
 using devboost.dronedelivery.felipe.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -36,7 +37,7 @@ namespace devboost.dronedelivery.felipe
         }
 
         public IConfiguration Configuration { get; }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IDroneRepository, DroneRepository>();
@@ -48,7 +49,7 @@ namespace devboost.dronedelivery.felipe
             services.AddScoped<ICoordinateService, CoordinateService>();
             services.AddScoped<IPedidoFacade, PedidoFacade>();
             services.AddScoped<IDroneFacade, DroneFacade>();
-
+            services.AddScoped<ILoginValidator, LoginValidator>();
             // Configurando o uso da classe de contexto para
             // acesso às tabelas do ASP.NET Identity Core
             services.AddDbContext<ApplicationDbContext>(options =>
