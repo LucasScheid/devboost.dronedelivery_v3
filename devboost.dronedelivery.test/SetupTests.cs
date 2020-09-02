@@ -41,9 +41,9 @@ namespace devboost.dronedelivery.test
             };
         }
 
-        public static Pedido GetPedido()
+        public static felipe.DTO.Models.Pedido GetPedido()
         {
-            return new Pedido()
+            return new felipe.DTO.Models.Pedido()
             {
                 Cliente = new Cliente()
                 {
@@ -61,9 +61,9 @@ namespace devboost.dronedelivery.test
             };
 
         }
-        public static List<Pedido> GetPedidosList()
+        public static List<felipe.DTO.Models.Pedido> GetPedidosList()
         {
-            return new List<Pedido>() { 
+            return new List<felipe.DTO.Models.Pedido>() { 
                 GetPedido() 
             };
         }
@@ -82,9 +82,9 @@ namespace devboost.dronedelivery.test
             };
         }
 
-        public static Drone GetDrone()
+        public static felipe.DTO.Models.Drone GetDrone()
         {
-            return new Drone()
+            return new felipe.DTO.Models.Drone()
             {
                 Id = 1,
                 Autonomia = 100,

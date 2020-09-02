@@ -8,9 +8,6 @@ using devboost.dronedelivery.felipe.Services;
 using devboost.dronedelivery.felipe.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using NSubstitute;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -29,7 +26,7 @@ namespace devboost.dronedelivery.test
         public AssignDroneTests()
         {
             _dataContext = Substitute.For<DataContext>();
-            _dataContext.Pedido = Substitute.For<DbSet<Pedido>>();
+            _dataContext.Pedido = Substitute.For<DbSet<felipe.DTO.Models.Pedido>>();
             _dataContext.PedidoDrones = Substitute.For<DbSet<PedidoDrone>>();
             _clienteRepository = Substitute.For<IClienteRepository>();
             _pedidoService = Substitute.For<IPedidoService>();
@@ -65,8 +62,8 @@ namespace devboost.dronedelivery.test
             await pedidoFacade.AssignDrone(_pedidoRepository);
 
 
-            await _pedidoService.Received().DroneAtendePedido(Arg.Any<Pedido>());
-            _dataContext.Pedido.Received().Update(Arg.Any<Pedido>());
+            await _pedidoService.Received().DroneAtendePedido(Arg.Any<felipe.DTO.Models.Pedido>());
+            _dataContext.Pedido.Received().Update(Arg.Any<felipe.DTO.Models.Pedido>());
             _dataContext.PedidoDrones.Received().Add(Arg.Any<PedidoDrone>());
         }
         [Fact]
@@ -93,7 +90,7 @@ namespace devboost.dronedelivery.test
             await pedidoFacade.AssignDrone(_pedidoRepository);
 
 
-            _dataContext.Pedido.DidNotReceive().Update(Arg.Any<Pedido>());
+            _dataContext.Pedido.DidNotReceive().Update(Arg.Any<felipe.DTO.Models.Pedido>());
         }
         [Fact]
         public async Task TestPedidoNotFound()
@@ -114,7 +111,7 @@ namespace devboost.dronedelivery.test
             await pedidoFacade.AssignDrone(_pedidoRepository);
 
 
-            _dataContext.Pedido.DidNotReceive().Update(Arg.Any<Pedido>());
+            _dataContext.Pedido.DidNotReceive().Update(Arg.Any<felipe.DTO.Models.Pedido>());
         }
 
         [Fact]
