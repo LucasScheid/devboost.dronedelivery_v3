@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CoverageSession>
-  <Summary numSequencePoints="789" visitedSequencePoints="511" numBranchPoints="54" visitedBranchPoints="35" sequenceCoverage="64.76" branchCoverage="64.81" maxCyclomaticComplexity="68" minCyclomaticComplexity="16" visitedClasses="47" numClasses="64" visitedMethods="108" numMethods="161" />
+  <Summary numSequencePoints="789" visitedSequencePoints="523" numBranchPoints="54" visitedBranchPoints="35" sequenceCoverage="66.28" branchCoverage="64.81" maxCyclomaticComplexity="68" minCyclomaticComplexity="16" visitedClasses="50" numClasses="64" visitedMethods="111" numMethods="161" />
   <Modules>
-    <Module hash="047A89C4-A8B3-44F2-A66B-795F041DB596">
+    <Module hash="5C587560-275F-4565-8965-E20D244FE7FF">
       <ModulePath>devboost.dronedelivery.felipe.dll</ModulePath>
-      <ModuleTime>2020-09-03T10:21:35</ModuleTime>
+      <ModuleTime>2020-09-03T10:47:34</ModuleTime>
       <ModuleName>devboost.dronedelivery.felipe</ModuleName>
       <Files>
         <File uid="1" fullPath="D:\Pessoais\devboost.dronedelivery_v3\Application\Program.cs" />
@@ -400,9 +400,9 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="8E36DCEE-26C6-496D-9097-31852F004898">
+    <Module hash="B6D6CAFC-B811-4B4E-9709-435A1A09300C">
       <ModulePath>devboost.dronedelivery.felipe.DTO.dll</ModulePath>
-      <ModuleTime>2020-09-03T10:21:35</ModuleTime>
+      <ModuleTime>2020-09-03T10:47:34</ModuleTime>
       <ModuleName>devboost.dronedelivery.felipe.DTO</ModuleName>
       <Files>
         <File uid="7" fullPath="D:\Pessoais\devboost.dronedelivery_v3\Domain\DTO\DroneDTO.cs" />
@@ -1271,9 +1271,9 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="208E7F90-A0A7-4CE8-B355-C9FC2E65A46D">
+    <Module hash="0B231694-1D8B-49C8-994D-5C9440205F3D">
       <ModulePath>devboost.dronedelivery.felipe.EF.dll</ModulePath>
-      <ModuleTime>2020-09-03T10:21:35</ModuleTime>
+      <ModuleTime>2020-09-03T10:47:34</ModuleTime>
       <ModuleName>devboost.dronedelivery.felipe.EF</ModuleName>
       <Files>
         <File uid="21" fullPath="D:\Pessoais\devboost.dronedelivery_v3\Infra\DbContextFactory.cs" />
@@ -1981,9 +1981,9 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="9EEB7A32-F4E8-4070-9818-A6A55F38CB88">
+    <Module hash="2258A7B6-EC59-4C1D-8B8A-F6214FCC6F5D">
       <ModulePath>devboost.dronedelivery.felipe.Facade.dll</ModulePath>
-      <ModuleTime>2020-09-03T10:21:35</ModuleTime>
+      <ModuleTime>2020-09-03T10:47:34</ModuleTime>
       <ModuleName>devboost.dronedelivery.felipe.Facade</ModuleName>
       <Files>
         <File uid="30" fullPath="D:\Pessoais\devboost.dronedelivery_v3\Domain\Facade\DroneFacade.cs" />
@@ -2192,9 +2192,9 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="17A9EBB7-A462-4972-9381-E05B57A3EA09">
+    <Module hash="C2D71934-50F6-41B9-9AB3-369A30274757">
       <ModulePath>devboost.dronedelivery.felipe.Security.dll</ModulePath>
-      <ModuleTime>2020-09-03T10:21:35</ModuleTime>
+      <ModuleTime>2020-09-03T10:47:34</ModuleTime>
       <ModuleName>devboost.dronedelivery.felipe.Security</ModuleName>
       <Files>
         <File uid="32" fullPath="D:\Pessoais\devboost.dronedelivery_v3\Services\Security\AccessManager.cs" />
@@ -2313,62 +2313,62 @@
           </Methods>
         </Class>
         <Class>
-          <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="1" />
+          <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
           <FullName>devboost.dronedelivery.felipe.Security.DroneRoleValidator</FullName>
           <Methods>
-            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
               <Name>System.Void devboost.dronedelivery.felipe.Security.DroneRoleValidator::.ctor(Microsoft.AspNetCore.Identity.RoleManager`1&lt;Microsoft.AspNetCore.Identity.IdentityRole&gt;)</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="13" ordinal="0" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="0" uspid="14" ordinal="1" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="0" uspid="15" ordinal="2" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="0" uspid="16" ordinal="3" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="2" uspid="13" ordinal="0" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="2" uspid="14" ordinal="1" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="2" uspid="15" ordinal="2" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="2" uspid="16" ordinal="3" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="13" ec="1" el="16" bec="0" bev="0" fileid="33" xmlns:p8="xsi" />
+              <MethodPoint vc="4" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="13" ec="1" el="16" bec="0" bev="0" fileid="33" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
         <Class>
-          <Summary numSequencePoints="5" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="1" />
+          <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
           <FullName>devboost.dronedelivery.felipe.Security.DroneRoleValidator/&lt;CreateRoleAsync&gt;d__2</FullName>
           <Methods>
-            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="5" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
               <Name>System.Void devboost.dronedelivery.felipe.Security.DroneRoleValidator/&lt;CreateRoleAsync&gt;d__2::MoveNext()</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="18" ordinal="0" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="0" uspid="19" ordinal="1" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="0" uspid="20" ordinal="2" sl="20" sc="1" el="20" ec="2" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="0" uspid="21" ordinal="3" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="0" uspid="22" ordinal="4" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="18" ordinal="0" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="19" ordinal="1" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="20" ordinal="2" sl="20" sc="1" el="20" ec="2" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="21" ordinal="3" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="22" ordinal="4" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="18" ec="1" el="22" bec="0" bev="0" fileid="33" xmlns:p8="xsi" />
+              <MethodPoint vc="5" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="18" ec="1" el="22" bec="0" bev="0" fileid="33" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
         <Class>
-          <Summary numSequencePoints="3" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="1" />
+          <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
           <FullName>devboost.dronedelivery.felipe.Security.DroneRoleValidator/&lt;ExistRoleAsync&gt;d__3</FullName>
           <Methods>
-            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="3" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
               <Name>System.Void devboost.dronedelivery.felipe.Security.DroneRoleValidator/&lt;ExistRoleAsync&gt;d__3::MoveNext()</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="25" ordinal="0" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="0" uspid="26" ordinal="1" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="33" />
-                <SequencePoint vc="0" uspid="27" ordinal="2" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="25" ordinal="0" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="26" ordinal="1" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="1" uspid="27" ordinal="2" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="25" ec="1" el="27" bec="0" bev="0" fileid="33" xmlns:p8="xsi" />
+              <MethodPoint vc="3" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="25" ec="1" el="27" bec="0" bev="0" fileid="33" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
@@ -2680,9 +2680,9 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="37F4F32C-A5C3-4E50-9D23-916A86821940">
+    <Module hash="B6B5D1E3-20A0-4113-AEED-3591DBAF8416">
       <ModulePath>devboost.dronedelivery.felipe.Services.dll</ModulePath>
-      <ModuleTime>2020-09-03T10:21:35</ModuleTime>
+      <ModuleTime>2020-09-03T10:47:34</ModuleTime>
       <ModuleName>devboost.dronedelivery.felipe.Services</ModuleName>
       <Files>
         <File uid="39" fullPath="D:\Pessoais\devboost.dronedelivery_v3\Services\Services\CoordinatorService.cs" />
