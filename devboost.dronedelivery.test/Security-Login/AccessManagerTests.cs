@@ -91,7 +91,7 @@ namespace devboost.dronedelivery.test.Security_Login
             var signInManager = Substitute.For<SignInManager<ApplicationUser>>(_userManager, contextAccessor,
                 claimsFactory, _optionsAccessor, logger, schemes, confirmation);
             var loginValidator = new LoginValidator(signInManager, _userManager);
-
+            signInManager.CheckPasswordSignInAsync(Arg.Any<ApplicationUser>(), Arg.Any<string>(), Arg.Any<bool>()).Returns(SignInResult.Success);
             await loginValidator.CheckPasswordUserAsync(user, "");
 
             await signInManager.Received().CheckPasswordSignInAsync(Arg.Any<ApplicationUser>(), Arg.Any<string>(), Arg.Any<bool>());
