@@ -23,8 +23,6 @@ namespace devboost.dronedelivery.test.Drone
             droneService.GetDroneStatusAsync();
 
             Assert.Equal<int>(2,droneService.GetDroneStatusAsync().Count);
-
-            
         }
 
         [Fact]
@@ -42,8 +40,15 @@ namespace devboost.dronedelivery.test.Drone
                 SomaDistancia = 453
             };
 
+            Assert.True((drone.Id == 1));
+            Assert.True((drone.Capacidade == 80));
+            Assert.True((drone.Velocidade == 100));
+            Assert.True((drone.Autonomia == 4));
+            Assert.True((drone.Carga == 300));
+            Assert.True((drone.Perfomance == 467.7F));
+            Assert.True((drone.SomaPeso == 111));
+            Assert.True((drone.SomaDistancia == 453));
             Assert.NotNull(drone);
-
         }
     }
 }
