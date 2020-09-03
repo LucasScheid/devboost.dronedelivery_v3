@@ -42,5 +42,18 @@ namespace devboost.dronedelivery.test.Controller
 
 
         }
+
+        [Fact]
+        public async Task PostFailedTest()
+        {
+            _loginValidator.CheckPasswordUserAsync(Arg.Any<ApplicationUser>(), Arg.Any<string>()).Returns(false);
+            _loginValidator.GetUserById(Arg.Any<string>()).Returns(new ApplicationUser());
+            _loginValidator.ValidateRoleAsync(Arg.Any<ApplicationUser>(), Arg.Any<string>()).Returns(false);
+            var loginController = new LoginController(_accessManager);
+            var token = await loginController.Post(SetupTests.GetCliente()) as Token;
+            Assert.True(token == null);
+
+        }
+
     }
 }
