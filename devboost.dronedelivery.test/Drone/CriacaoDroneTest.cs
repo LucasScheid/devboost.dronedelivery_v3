@@ -44,7 +44,7 @@ namespace devboost.dronedelivery.test
 
             felipe.DTO.Models.Pedido pedido = new felipe.DTO.Models.Pedido { ClienteId = 1, Peso = pedidoPeso };
 
-            //Assert.True(resultadoEsperado == DroneService.ValidaPeso(dtoDroneStatus, pedido), mensagemErro);
+            Assert.True(resultadoEsperado == DroneService.ValidaPeso(dtoDroneStatus, pedido), mensagemErro);
         }
 
 
@@ -58,7 +58,7 @@ namespace devboost.dronedelivery.test
 
             DroneStatusDto dtoDroneStatus = new DroneStatusDto { Drone = drone, SomaDistancia = somaDistancia, SomaPeso = 300 };
 
-            //Assert.True(resultadoEsperado == DroneService.ValidaDistancia(dtoDroneStatus, distanciaRetorno, pedidoDroneDistancia), mensagemErro);
+            Assert.True(resultadoEsperado == DroneService.ValidaDistancia(dtoDroneStatus, distanciaRetorno, pedidoDroneDistancia), mensagemErro);
         }
 
         [Fact]
