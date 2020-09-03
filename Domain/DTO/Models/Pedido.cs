@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace devboost.dronedelivery.felipe.DTO.Models
 {
@@ -8,7 +7,7 @@ namespace devboost.dronedelivery.felipe.DTO.Models
     {
         [Key]
         public int Id { get; set; }
-       
+
         public int ClienteId { get; set; }
         public Cliente Cliente { get; set; }
 

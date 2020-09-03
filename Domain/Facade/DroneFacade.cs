@@ -5,7 +5,6 @@ using devboost.dronedelivery.felipe.Facade.Interface;
 using devboost.dronedelivery.felipe.Services.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace devboost.dronedelivery.felipe.Facade
 {

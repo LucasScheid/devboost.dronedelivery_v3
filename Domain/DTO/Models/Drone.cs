@@ -19,7 +19,7 @@ namespace devboost.dronedelivery.felipe.DTO.Models
 
         public override bool Equals(object obj)
         {
-            return Id == ((Drone)obj).Id 
+            return Id == ((Drone)obj).Id
             && Capacidade == ((Drone)obj).Capacidade
             && Velocidade == ((Drone)obj).Velocidade
             && Autonomia == ((Drone)obj).Autonomia

@@ -1,6 +1,5 @@
 ﻿using devboost.dronedelivery.felipe.DTO.Models;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Threading.Tasks;
 
 namespace devboost.dronedelivery.felipe.EF.Repositories.Interfaces

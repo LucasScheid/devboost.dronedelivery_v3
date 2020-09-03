@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace devboost.dronedelivery.felipe.Security.Interfaces
 {
@@ -10,5 +6,5 @@ namespace devboost.dronedelivery.felipe.Security.Interfaces
     {
         Task<bool> ExistRoleAsync(string role);
         Task<bool> CreateRoleAsync(string role);
-    } 
+    }
 }

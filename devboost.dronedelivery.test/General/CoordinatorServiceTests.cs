@@ -1,10 +1,6 @@
-﻿using devboost.dronedelivery.felipe.Services;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using devboost.dronedelivery.felipe.DTO.Extensions;
+using devboost.dronedelivery.felipe.Services;
 using Xunit;
-using devboost.dronedelivery.felipe.DTO.Extensions;
-using devboost.dronedelivery.test.Setup;
 
 namespace devboost.dronedelivery.test.General
 {

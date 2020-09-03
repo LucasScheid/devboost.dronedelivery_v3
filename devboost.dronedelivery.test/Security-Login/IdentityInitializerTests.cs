@@ -68,7 +68,7 @@ namespace devboost.dronedelivery.test.Security_Login
             _droneRoleValidator.ExistRoleAsync(Arg.Any<string>()).Returns(false);
             _validateDatabase.EnsureCreated().Returns(true);
             Assert.Throws<Exception>(() => initializer.Initialize());
-            
+
         }
 
     }

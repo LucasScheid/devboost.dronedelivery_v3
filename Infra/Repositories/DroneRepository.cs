@@ -16,7 +16,7 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
         private readonly ICommandExecutor<DroneStatusResult> _droneStatusExecutor;
         private readonly ICommandExecutor<StatusDroneDto> _statusDroneExecutor;
 
-        
+
         public DroneRepository(DataContext context,
             ICommandExecutor<StatusDroneDto> statusDroneExecutor,
             ICommandExecutor<DroneStatusResult> droneStatusExecutor)
@@ -39,7 +39,7 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
 
         public List<StatusDroneDto> GetDroneStatusAsync()
         {
-            return _statusDroneExecutor.ExcecuteCommand(GetStatusSqlCommand()).ToList(); 
+            return _statusDroneExecutor.ExcecuteCommand(GetStatusSqlCommand()).ToList();
         }
 
 

@@ -1,17 +1,14 @@
 ﻿using devboost.dronedelivery.felipe.Security;
-using devboost.dronedelivery.felipe.Security.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using NSubstitute;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace devboost.dronedelivery.test.Security_Login
 {
-    public class DroneRoleValidatorTests 
+    public class DroneRoleValidatorTests
     {
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IRoleStore<IdentityRole> _store;

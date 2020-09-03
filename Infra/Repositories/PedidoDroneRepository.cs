@@ -29,7 +29,7 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
             _clienteRepository = clienteRepository;
         }
 
-        public  List<PedidoDrone> RetornaPedidosEmAberto()
+        public List<PedidoDrone> RetornaPedidosEmAberto()
         {
             List<PedidoDrone> pedidoDrones = new List<PedidoDrone>();
 
@@ -52,7 +52,7 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
                         Distancia = b.Distancia,
                         StatusEnvio = b.StatusEnvio,
                         Pedido = pedido,
-                        Drone = _droneRepository.GetDrone(b.DroneId),                        
+                        Drone = _droneRepository.GetDrone(b.DroneId),
                     };
 
                     pedidoDrones.Add(pedidoDrone);
@@ -76,12 +76,12 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
                 $"DataHoraFinalizacao = '{drone.Drone.ToTempoGasto(distancia)}'" +
                 $" WHERE DroneId = {drone.Drone.Id}";
 
-             await conexao.ExecuteAsync(sql);
+            await conexao.ExecuteAsync(sql);
         }
 
         public List<PedidoDrone> RetornaPedidosParaFecharAsync()
         {
-            return  _context
+            return _context
                 .PedidoDrones
                 .Where(p =>
                     p.StatusEnvio == (int)StatusEnvio.EM_TRANSITO &&
@@ -91,7 +91,7 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
 
         public async Task<int> UpdatePedido(PedidoDrone pedido)
         {
-             _context.PedidoDrones.Update(pedido);
+            _context.PedidoDrones.Update(pedido);
             return await _context.SaveChangesAsync();
         }
     }

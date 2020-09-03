@@ -1,5 +1,4 @@
 ﻿using devboost.dronedelivery.felipe.DTO.Models;
-using devboost.dronedelivery.felipe.EF.Data;
 using devboost.dronedelivery.felipe.Security.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using System;

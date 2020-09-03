@@ -26,7 +26,7 @@ namespace devboost.dronedelivery.test
             DroneFacade droneFacade = new DroneFacade(_droneService, _droneRepository);
 
 
-            devboost.dronedelivery.felipe.DTO.Models.Drone drone = new devboost.dronedelivery.felipe.DTO.Models.Drone { Autonomia =120, Velocidade = 80};
+            devboost.dronedelivery.felipe.DTO.Models.Drone drone = new devboost.dronedelivery.felipe.DTO.Models.Drone { Autonomia = 120, Velocidade = 80 };
             droneFacade.SaveDrone(drone);
 
             Assert.True(drone.Perfomance == 160);

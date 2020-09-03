@@ -13,7 +13,7 @@ namespace devboost.dronedelivery.felipe.DTO.Models
         public Drone Drone { get; set; }
 
         public int PedidoId { get; set; }
-        
+
         public Pedido Pedido { get; set; }
 
         public double Distancia { get; set; }

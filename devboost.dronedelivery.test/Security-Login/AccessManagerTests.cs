@@ -1,8 +1,6 @@
 ﻿using devboost.dronedelivery.felipe.DTO.Models;
 using devboost.dronedelivery.felipe.Security;
 using devboost.dronedelivery.felipe.Security.Interfaces;
-using devboost.dronedelivery.test.Setup;
-using Google.Protobuf.WellKnownTypes;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -12,7 +10,6 @@ using NSubstitute;
 using NSubstitute.ReceivedExtensions;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -123,7 +120,7 @@ namespace devboost.dronedelivery.test.Security_Login
             var logger = Substitute.For<ILogger<SignInManager<ApplicationUser>>>();
             var schemes = Substitute.For<IAuthenticationSchemeProvider>();
             var confirmation = Substitute.For<IUserConfirmation<ApplicationUser>>();
-            var signInManager = Substitute.For<SignInManager<ApplicationUser>>(_userManager, contextAccessor, 
+            var signInManager = Substitute.For<SignInManager<ApplicationUser>>(_userManager, contextAccessor,
                 claimsFactory, _optionsAccessor, logger, schemes, confirmation);
             var loginValidator = new LoginValidator(signInManager, _userManager);
             var user = new ApplicationUser();
