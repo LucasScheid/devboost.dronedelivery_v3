@@ -2,13 +2,13 @@
 using devboost.dronedelivery.felipe.DTO.Constants;
 using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
 using Microsoft.Extensions.Configuration;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Text;
+using System.Diagnostics.CodeAnalysis;
 
 namespace devboost.dronedelivery.felipe.EF.Repositories
 {
+    [ExcludeFromCodeCoverage]
     public class CommandExecutor<T> : ICommandExecutor<T> where T : class
     {
         private readonly string _connectionString;
