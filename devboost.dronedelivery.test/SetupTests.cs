@@ -122,7 +122,54 @@ namespace devboost.dronedelivery.test
             return statusDroneDtos;
         }
 
+        public static List<felipe.DTO.Models.Drone> GetDrones()
+        {
+            return new List<felipe.DTO.Models.Drone>()
+            {
+                GetDrone()
+            };
+        }
 
+        public static StatusDroneDto GetStatusDroneDto()
+        {
+            return new StatusDroneDto()
+            {
+                ClienteId = 1,
+                DroneId = 1,
+                Latitude = 1.0,
+                Longitude = 1.0,
+                Nome = "Felipe",
+                PedidoId = 1,
+                Situacao = false
+            };
+        }
+
+        public static DroneStatusResult GetDroneStatusResult()
+        {
+            return new DroneStatusResult
+            {
+                Autonomia = 100,
+                Capacidade = 100,
+                Carga = 100,
+                Id = 1,
+                Perfomance = 1000,
+                SomaDistancia = 100,
+                SomaPeso = 100,
+                Velocidade = 100
+            };
+        }
+
+        public static List<DroneStatusResult> GetDroneStatusResults()
+        {
+            return new List<DroneStatusResult>() { GetDroneStatusResult()};
+        }
+        public static List<StatusDroneDto> GetListStatusDroneDto()
+        {
+            return new List<StatusDroneDto>()
+            {
+                GetStatusDroneDto()
+            };
+        }
         public static felipe.DTO.Models.Drone GetDrone()
         {
             return new felipe.DTO.Models.Drone()

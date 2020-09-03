@@ -1,48 +1,29 @@
-﻿using Dapper;
-using devboost.dronedelivery.felipe.DTO;
-using devboost.dronedelivery.felipe.DTO.Constants;
+﻿using devboost.dronedelivery.felipe.DTO;
 using devboost.dronedelivery.felipe.DTO.Enums;
 using devboost.dronedelivery.felipe.DTO.Models;
 using devboost.dronedelivery.felipe.EF.Data;
 using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
-using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace devboost.dronedelivery.felipe.EF.Repositories
 {
-    public  class DroneStatusResult
-    {
-        public int Id { get; set; }
-
-        public int Capacidade { get; set; }
-
-        public int Velocidade { get; set; }
-
-        public int Autonomia { get; set; }
-
-        public int Carga { get; set; }
-
-        public float Perfomance { get; set; }
-
-        public int SomaPeso { get; set; }
-        public int SomaDistancia { get; set; }
-    }
 
     public class DroneRepository : IDroneRepository
     {
         private readonly DataContext _context;
-        private readonly string _connectionString;
+        private readonly ICommandExecutor<DroneStatusResult> _droneStatusExecutor;
+        private readonly ICommandExecutor<StatusDroneDto> _statusDroneExecutor;
 
+        
         public DroneRepository(DataContext context,
-            IConfiguration configuration)
+            ICommandExecutor<StatusDroneDto> statusDroneExecutor,
+            ICommandExecutor<DroneStatusResult> droneStatusExecutor)
         {
             _context = context;
-            _connectionString = configuration.GetConnectionString(ProjectConsts.CONNECTION_STRING_CONFIG);
-
+            _droneStatusExecutor = droneStatusExecutor;
+            _statusDroneExecutor = statusDroneExecutor;
         }
 
         public void SaveDrone(Drone drone)
@@ -58,32 +39,32 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
 
         public List<StatusDroneDto> GetDroneStatusAsync()
         {
-            using SqlConnection conexao = new SqlConnection(_connectionString);
-            var resultado =  conexao.Query<StatusDroneDto>(GetStatusSqlCommand());
-            return resultado.ToList();
+            return _statusDroneExecutor.ExcecuteCommand(GetStatusSqlCommand()).ToList(); 
         }
+
+
         public DroneStatusDto RetornaDroneStatus(int droneId)
         {
-            using SqlConnection conexao = new SqlConnection(_connectionString);
 
             DroneStatusDto droneStatusDto = null;
 
-            var consulta = conexao.Query<DroneStatusResult>(GetSqlCommand(droneId)).FirstOrDefault();
+            var consulta = _droneStatusExecutor.ExcecuteCommand(GetSqlCommand(droneId)).ToList();
 
-            if (consulta != null)
+            if (consulta.Any())
             {
+                var droneData = consulta.FirstOrDefault();
                 droneStatusDto = new DroneStatusDto();
 
                 droneStatusDto.Drone = new Drone();
 
-                droneStatusDto.Drone.Id = consulta.Id;
-                droneStatusDto.Drone.Velocidade = consulta.Velocidade;
-                droneStatusDto.Drone.Capacidade = consulta.Capacidade;
-                droneStatusDto.Drone.Autonomia = consulta.Autonomia;
-                droneStatusDto.Drone.Carga = consulta.Carga;
-                droneStatusDto.Drone.Perfomance = consulta.Perfomance;
-                droneStatusDto.SomaPeso = consulta.SomaPeso;
-                droneStatusDto.SomaDistancia = consulta.SomaDistancia;
+                droneStatusDto.Drone.Id = droneData.Id;
+                droneStatusDto.Drone.Velocidade = droneData.Velocidade;
+                droneStatusDto.Drone.Capacidade = droneData.Capacidade;
+                droneStatusDto.Drone.Autonomia = droneData.Autonomia;
+                droneStatusDto.Drone.Carga = droneData.Carga;
+                droneStatusDto.Drone.Perfomance = droneData.Perfomance;
+                droneStatusDto.SomaPeso = droneData.SomaPeso;
+                droneStatusDto.SomaDistancia = droneData.SomaDistancia;
 
             }
 
@@ -93,7 +74,7 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
         private string GetSelectPedidos(int situacao, StatusEnvio status)
         {
             var stringBuilder = new StringBuilder();
-            
+
             stringBuilder.AppendLine("select a.DroneId,");
             stringBuilder.AppendLine($"{situacao} as Situacao,");
             stringBuilder.AppendLine(" a.Id as PedidoId,");

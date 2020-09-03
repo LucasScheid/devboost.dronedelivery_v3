@@ -8,6 +8,6 @@ namespace devboost.dronedelivery.felipe.Facade.Interface
     public interface IDroneFacade
     {
         List<StatusDroneDto> GetDroneStatusAsync();
-        public Drone SaveDrone(Drone drone);
+        Drone SaveDrone(Drone drone);
     }
 }

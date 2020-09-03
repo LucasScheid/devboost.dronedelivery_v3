@@ -9,7 +9,7 @@ namespace devboost.dronedelivery.test.DTO.Extensions
         public void TestClienteExtension()
         {
             var client = SetupTests.GetCliente();
-            Assert.True(!client.IsUserEmpty());
+            Assert.True(client.HasClient());
         }
     }
 }

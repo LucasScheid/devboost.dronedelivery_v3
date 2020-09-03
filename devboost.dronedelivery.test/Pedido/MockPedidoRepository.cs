@@ -24,10 +24,10 @@ namespace devboost.dronedelivery.test.Pedido
             return _pedidos;
         }
 
-        public Task SavePedidoAsync(felipe.DTO.Models.Pedido pedido)
+        public async Task<int> SavePedidoAsync(felipe.DTO.Models.Pedido pedido)
         {
             _pedidos.Add(pedido);
-            return Task.FromResult<Task>(null);
+            return 1;
         }
     }
 }

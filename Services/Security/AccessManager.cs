@@ -32,7 +32,7 @@ namespace devboost.dronedelivery.felipe.Security
         public async Task<bool> ValidateCredentials(Cliente user)
         {
             bool credenciaisValidas = false;
-            if (!user.IsUserEmpty())
+            if (user.HasClient())
             {
                 // Verifica a existência do cliente nas tabelas do
                 // ASP.NET Core Identity

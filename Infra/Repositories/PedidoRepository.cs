@@ -17,6 +17,11 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
             _context = context;
         }
 
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
+
         public Pedido GetPedido(int id)
         {
             return _context.Find<Pedido>(id);
@@ -31,10 +36,10 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
             return pedidos.ToList();
         }
 
-        public async Task SavePedidoAsync(Pedido pedido)
+        public async Task<int> SavePedidoAsync(Pedido pedido)
         {
             _context.Pedido.Add(pedido);
-            await _context.SaveChangesAsync();
+            return await _context.SaveChangesAsync();
         }
     }
 }
