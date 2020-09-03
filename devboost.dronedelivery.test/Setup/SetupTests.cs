@@ -161,7 +161,7 @@ namespace devboost.dronedelivery.test
 
         public static List<DroneStatusResult> GetDroneStatusResults()
         {
-            return new List<DroneStatusResult>() { GetDroneStatusResult()};
+            return new List<DroneStatusResult>() { GetDroneStatusResult() };
         }
         public static List<StatusDroneDto> GetListStatusDroneDto()
         {

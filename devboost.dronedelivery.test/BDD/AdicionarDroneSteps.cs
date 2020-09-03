@@ -3,10 +3,6 @@ using devboost.dronedelivery.felipe.Facade;
 using devboost.dronedelivery.felipe.Facade.Interface;
 using devboost.dronedelivery.felipe.Services.Interfaces;
 using devboost.dronedelivery.test.Drone;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using TechTalk.SpecFlow;
 using Xunit;
 using domainModel = devboost.dronedelivery.felipe.DTO.Models;
@@ -46,7 +42,7 @@ namespace devboost.dronedelivery.test.BDD
         [When("Quando criamos o Drone")]
         public void CriamosDrone()
         {
-            domainModel.Drone drone = new domainModel.Drone 
+            domainModel.Drone drone = new domainModel.Drone
             { Autonomia = _scenarioContext.Get<int>("autonomia"), Velocidade = _scenarioContext.Get<int>("velocidade") };
             _droneFacade.SaveDrone(drone);
 

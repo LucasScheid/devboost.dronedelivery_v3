@@ -3,7 +3,6 @@ using devboost.dronedelivery.felipe.DTO.Enums;
 using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
 using devboost.dronedelivery.felipe.Facade.Interface;
 using NSubstitute;
-using System;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -39,7 +38,7 @@ namespace devboost.dronedelivery.test.Controller
             var pedido = await pedidosController.PostPedido(SetupTests.GetPedido());
             await _pedidoRepository.Received().SavePedidoAsync(Arg.Any<felipe.DTO.Models.Pedido>());
             Assert.True(pedido.Value.Situacao == (int)StatusPedido.AGUARDANDO);
-            
+
         }
 
     }

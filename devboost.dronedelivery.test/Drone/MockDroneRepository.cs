@@ -1,5 +1,4 @@
 ﻿using devboost.dronedelivery.felipe.DTO;
-using devboost.dronedelivery.felipe.DTO.Enums;
 using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;

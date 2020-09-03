@@ -1,14 +1,9 @@
-﻿using devboost.dronedelivery.felipe.DTO;
-using devboost.dronedelivery.felipe.DTO.Models;
+﻿using devboost.dronedelivery.felipe.DTO.Models;
 using devboost.dronedelivery.felipe.EF.Data;
 using devboost.dronedelivery.felipe.EF.Repositories;
 using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
 using Microsoft.Extensions.Configuration;
 using NSubstitute;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace devboost.dronedelivery.test.Repositories

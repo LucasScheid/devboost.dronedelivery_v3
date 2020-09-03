@@ -11,7 +11,7 @@ namespace devboost.dronedelivery.test.Repositories
             var options = new DbContextOptionsBuilder<DataContext>()
            .UseInMemoryDatabase(databaseName: "Database")
            .Options;
-            
+
             // Insert seed data into the database using one instance of the context
             var context = new DataContext(options);
             try

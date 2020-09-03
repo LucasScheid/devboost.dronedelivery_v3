@@ -1,9 +1,5 @@
 ﻿using devboost.dronedelivery.felipe.DTO.Enums;
-using devboost.dronedelivery.felipe.EF.Data;
 using devboost.dronedelivery.felipe.EF.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace devboost.dronedelivery.test.Repositories

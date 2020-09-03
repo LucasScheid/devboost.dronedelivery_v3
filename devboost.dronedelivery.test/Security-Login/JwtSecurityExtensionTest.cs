@@ -2,19 +2,13 @@
 using devboost.dronedelivery.felipe.Security;
 using devboost.dronedelivery.felipe.Security.Extensions;
 using devboost.dronedelivery.felipe.Security.Interfaces;
-using devboost.dronedelivery.test.Setup;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NSubstitute;
-using NSubstitute.ReceivedExtensions;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace devboost.dronedelivery.test.Security_Login

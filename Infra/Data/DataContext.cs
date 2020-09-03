@@ -1,7 +1,5 @@
 ﻿using devboost.dronedelivery.felipe.DTO.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System.IO;
 
 namespace devboost.dronedelivery.felipe.EF.Data
 {

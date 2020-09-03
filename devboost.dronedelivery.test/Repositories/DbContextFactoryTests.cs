@@ -1,7 +1,4 @@
 ﻿using devboost.dronedelivery.felipe.EF;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace devboost.dronedelivery.test.Repositories
