@@ -8,8 +8,8 @@ namespace devboost.dronedelivery.felipe.Security.Interfaces
 {
     public interface ILoginValidator
     {
-        Task<bool> CheckPasswordUserAsnc(ApplicationUser user, string password);
-        Task<bool> ValidateRoleAsnc(ApplicationUser user, string role);
+        Task<bool> CheckPasswordUserAsync(ApplicationUser user, string password);
+        Task<bool> ValidateRoleAsync(ApplicationUser user, string role);
 
         Task<ApplicationUser> GetUserById(string userId);
     }

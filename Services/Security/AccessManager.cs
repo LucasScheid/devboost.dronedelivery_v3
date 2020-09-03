@@ -34,10 +34,10 @@ namespace devboost.dronedelivery.felipe.Security
                 var userIdentity = await _loginValidator.GetUserById(user.UserId);
                 if (userIdentity != null)
                 {
-                    var resultadoLogin = await _loginValidator.CheckPasswordUserAsnc(userIdentity, user.Password);
+                    var resultadoLogin = await _loginValidator.CheckPasswordUserAsync(userIdentity, user.Password);
                     if (resultadoLogin)
                     {
-                        credenciaisValidas = await _loginValidator.ValidateRoleAsnc(
+                        credenciaisValidas = await _loginValidator.ValidateRoleAsync(
                             userIdentity, Roles.ROLE_API_DRONE);
                     }
                 }

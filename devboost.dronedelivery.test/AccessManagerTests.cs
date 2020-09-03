@@ -30,7 +30,7 @@ namespace devboost.dronedelivery.test
             var accessManager = new AccessManager(_signingConfigurations, _tokenConfigurations, _loginValidator);
             _loginValidator.GetUserById(Arg.Any<string>()).Returns(new ApplicationUser());
             _loginValidator.CheckPasswordUserAsnc(Arg.Any<ApplicationUser>(), Arg.Any<string>()).Returns(true);
-            _loginValidator.ValidateRoleAsnc(Arg.Any<ApplicationUser>(), Arg.Any<string>()).Returns(true);
+            _loginValidator.ValidateRoleAsync(Arg.Any<ApplicationUser>(), Arg.Any<string>()).Returns(true);
             var valid = await accessManager.ValidateCredentials(SetupTests.GetCliente());
             Assert.True(valid);
         }
@@ -70,7 +70,7 @@ namespace devboost.dronedelivery.test
             var userManager = Substitute.For<UserManager<ApplicationUser>>();
             var loginValidator = new LoginValidator(signInManager, userManager);
             var user = new ApplicationUser();
-            await loginValidator.ValidateRoleAsnc(user, "admin");
+            await loginValidator.ValidateRoleAsync(user, "admin");
             await userManager.Received().IsInRoleAsync(Arg.Any<ApplicationUser>(), Arg.Any<string>());
         }
     }

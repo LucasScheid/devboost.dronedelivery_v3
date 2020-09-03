@@ -32,7 +32,7 @@ namespace devboost.dronedelivery.felipe.Security
                      .FindByNameAsync(userId);
         }
 
-        public async Task<bool> ValidateRoleAsnc(ApplicationUser user, string role)
+        public async Task<bool> ValidateRoleAsync(ApplicationUser user, string role)
         {
             return await _userManager.IsInRoleAsync(user, role);
         }
