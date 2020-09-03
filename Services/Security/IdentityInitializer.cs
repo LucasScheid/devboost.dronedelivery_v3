@@ -1,5 +1,6 @@
 ﻿using devboost.dronedelivery.felipe.DTO.Models;
 using devboost.dronedelivery.felipe.EF.Data;
+using devboost.dronedelivery.felipe.Security.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using System;
 
@@ -7,29 +8,27 @@ namespace devboost.dronedelivery.felipe.Security
 {
     public class IdentityInitializer
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IValidateDatabase _validateDatabase;
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
-
+        private readonly IDroneRoleValidator _droneRoleValidator;
         public IdentityInitializer(
-            ApplicationDbContext context,
+            IValidateDatabase validateDatabase,
             UserManager<ApplicationUser> userManager,
-            RoleManager<IdentityRole> roleManager)
+            IDroneRoleValidator droneRoleValidator)
         {
-            _context = context;
+            _validateDatabase = validateDatabase;
             _userManager = userManager;
-            _roleManager = roleManager;
+            _droneRoleValidator = droneRoleValidator;
         }
 
         public void Initialize()
         {
-            if (_context.Database.EnsureCreated())
+            if (_validateDatabase.EnsureCreated())
             {
-                if (!_roleManager.RoleExistsAsync(Roles.ROLE_API_DRONE).Result)
+                if (!_droneRoleValidator.ExistRoleAsync(Roles.ROLE_API_DRONE).Result)
                 {
-                    var resultado = _roleManager.CreateAsync(
-                        new IdentityRole(Roles.ROLE_API_DRONE)).Result;
-                    if (!resultado.Succeeded)
+                    var resultado = _droneRoleValidator.CreateRoleAsync(Roles.ROLE_API_DRONE).Result;
+                    if (!resultado)
                     {
                         throw new Exception(
                             $"Erro durante a criação da role {Roles.ROLE_API_DRONE}.");

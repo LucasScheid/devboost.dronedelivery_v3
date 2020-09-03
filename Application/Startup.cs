@@ -50,6 +50,8 @@ namespace devboost.dronedelivery.felipe
             services.AddScoped<IPedidoFacade, PedidoFacade>();
             services.AddScoped<IDroneFacade, DroneFacade>();
             services.AddScoped<ILoginValidator, LoginValidator>();
+            services.AddScoped<IDroneRoleValidator, DroneRoleValidator>();
+            services.AddScoped<IValidateDatabase, ValidateDatabse>();
             // Configurando o uso da classe de contexto para
             // acesso às tabelas do ASP.NET Identity Core
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -116,7 +118,10 @@ namespace devboost.dronedelivery.felipe
             // Criação de estruturas, usuários e permissões
             // na base do ASP.NET Identity Core (caso ainda não
             // existam)
-            new IdentityInitializer(context, userManager, roleManager).Initialize();
+            var droneRoleValidator = app.ApplicationServices.GetService<IDroneRoleValidator>();
+            var validateDatabase = app.ApplicationServices.GetService<IValidateDatabase>();
+
+            new IdentityInitializer(validateDatabase, userManager, droneRoleValidator).Initialize();
 
             // Swagger
             app.UseSwagger()
