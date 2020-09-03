@@ -18,7 +18,6 @@ namespace devboost.dronedelivery.test
     public class IdentityInitializerTests
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IUserStore<ApplicationUser> _store;
         private readonly IOptions<IdentityOptions> _optionsAccessor;
         private readonly IPasswordHasher<ApplicationUser> _passwordHasher;

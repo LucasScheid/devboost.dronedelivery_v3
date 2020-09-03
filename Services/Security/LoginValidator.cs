@@ -19,7 +19,7 @@ namespace devboost.dronedelivery.felipe.Security
             _signInManager = signInManager;
             _userManager = userManager;
         }
-        public async Task<bool> CheckPasswordUserAsnc(ApplicationUser user, string password)
+        public async Task<bool> CheckPasswordUserAsync(ApplicationUser user, string password)
         {
             var result = await _signInManager
                         .CheckPasswordSignInAsync(user, password, LOCKOUT_ON_FAILURE);
