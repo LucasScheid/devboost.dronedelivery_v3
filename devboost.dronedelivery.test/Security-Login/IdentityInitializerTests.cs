@@ -59,5 +59,17 @@ namespace devboost.dronedelivery.test.Security_Login
             initializer.Initialize();
             _userManager.Received().FindByNameAsync(Arg.Any<string>());
         }
+
+        [Fact]
+        public void InitializerFailedTests()
+        {
+            var initializer = new IdentityInitializer(_validateDatabase, _userManager, _droneRoleValidator);
+            _droneRoleValidator.CreateRoleAsync(Arg.Any<string>()).Returns(false);
+            _droneRoleValidator.ExistRoleAsync(Arg.Any<string>()).Returns(false);
+            _validateDatabase.EnsureCreated().Returns(true);
+            Assert.Throws<Exception>(() => initializer.Initialize());
+            
+        }
+
     }
 }
