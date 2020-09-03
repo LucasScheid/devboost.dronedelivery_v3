@@ -2,6 +2,7 @@
 using devboost.dronedelivery.felipe.EF.Data;
 using devboost.dronedelivery.felipe.EF.Repositories;
 using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
+using devboost.dronedelivery.test.Setup;
 using NSubstitute;
 using Xunit;
 

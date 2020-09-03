@@ -14,21 +14,23 @@ namespace devboost.dronedelivery.felipe.Controllers
     [ApiController]
     public class LoginController
     {
+        private readonly AccessManager _accessManager;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-        public LoginController()
+        public LoginController(AccessManager accessManager)
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
         {
+            _accessManager = accessManager;
         }
 
         [AllowAnonymous]
         [HttpPost]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-        public async Task<object> Post([FromBody] Cliente usuario, [FromServices] AccessManager accessManager)
+        public async Task<object> Post([FromBody] Cliente usuario)
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
         {
-            if (await accessManager.ValidateCredentials(usuario))
+            if (await _accessManager.ValidateCredentials(usuario))
             {
-                return accessManager.GenerateToken(usuario);
+                return _accessManager.GenerateToken(usuario);
             }
             else
             {
