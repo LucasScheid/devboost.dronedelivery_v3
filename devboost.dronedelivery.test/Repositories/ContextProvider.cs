@@ -16,8 +16,11 @@ namespace devboost.dronedelivery.test.Repositories
             var context = new DataContext(options);
             try
             {
-                context.AddRange(data);
-                context.SaveChanges();
+                if (data?.Count > 0)
+                {
+                    context.AddRange(data);
+                    context.SaveChanges();
+                }
             }
             catch
             {

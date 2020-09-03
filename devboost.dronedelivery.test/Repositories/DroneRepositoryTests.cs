@@ -29,6 +29,17 @@ namespace devboost.dronedelivery.test.Repositories
             _context.Received().Find<felipe.DTO.Models.Drone>(Arg.Any<int>());
 
         }
+
+        [Fact]
+        public void RetornaDroneTests()
+        {
+            var droneTest = SetupTests.GetDrone();
+            var context = ContextProvider<felipe.DTO.Models.Drone>.GetContext(SetupTests.GetDrones());
+            var droneRepository = new DroneRepository(context, _statusDroneExecutor, _droneStatusExecutor);
+            var drone = droneRepository.RetornaDrone();
+            Assert.True(drone.Equals(droneTest));
+        }
+
         [Fact]
         public void GetDroneStatusTest()
         {
