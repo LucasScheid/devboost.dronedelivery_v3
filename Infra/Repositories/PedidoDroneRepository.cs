@@ -89,10 +89,10 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
                 .ToList();
         }
 
-        public async Task UpdatePedido(PedidoDrone pedido)
+        public async Task<int> UpdatePedido(PedidoDrone pedido)
         {
              _context.PedidoDrones.Update(pedido);
-            await _context.SaveChangesAsync();
+            return await _context.SaveChangesAsync();
         }
     }
 }

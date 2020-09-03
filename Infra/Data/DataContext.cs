@@ -25,17 +25,5 @@ namespace devboost.dronedelivery.felipe.EF.Data
 
         public DbSet<PedidoDrone> PedidoDrones { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json")
-            .Build();
-            var connectionString = configuration.GetConnectionString("grupo4devboostdronedeliveryContext");
-
-            optionsBuilder
-                .UseSqlServer(connectionString,b => b.MigrationsAssembly("devboost.dronedelivery.felipe"));
-        }
-
     }
 }

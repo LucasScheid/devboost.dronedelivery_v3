@@ -10,6 +10,6 @@ namespace devboost.dronedelivery.felipe.EF.Repositories.Interfaces
         Task UpdatePedidoDrone(DroneStatusDto drone, double distancia);
         List<PedidoDrone> RetornaPedidosEmAberto();
         List<PedidoDrone> RetornaPedidosParaFecharAsync();
-        Task UpdatePedido(PedidoDrone pedido);
+        Task<int> UpdatePedido(PedidoDrone pedido);
     }
 }

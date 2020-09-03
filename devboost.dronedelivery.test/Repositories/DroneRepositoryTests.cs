@@ -7,14 +7,14 @@ using Xunit;
 
 namespace devboost.dronedelivery.test.Repositories
 {
-    public class DroneRepoTests
+    public class DroneRepositoryTests
     {
         private readonly DataContext _context;
         private readonly DroneRepository _droneRepository;
         private readonly ICommandExecutor<DroneStatusResult> _droneStatusExecutor;
         private readonly ICommandExecutor<StatusDroneDto> _statusDroneExecutor;
 
-        public DroneRepoTests()
+        public DroneRepositoryTests()
         {
             _context = Substitute.For<DataContext>();
             _droneStatusExecutor = Substitute.For<ICommandExecutor<DroneStatusResult>>();

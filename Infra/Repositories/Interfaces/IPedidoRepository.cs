@@ -6,7 +6,7 @@ namespace devboost.dronedelivery.felipe.EF.Repositories.Interfaces
 {
     public interface IPedidoRepository
     {
-        Task SavePedidoAsync(Pedido pedido);
+        Task<int> SavePedidoAsync(Pedido pedido);
         Pedido GetPedido(int id);
         List<Pedido> ObterPedidos(int situacao);
     }
