@@ -2,6 +2,7 @@
 using devboost.dronedelivery.felipe.Security;
 using devboost.dronedelivery.felipe.Security.Interfaces;
 using devboost.dronedelivery.test.Setup;
+using Google.Protobuf.WellKnownTypes;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -79,15 +80,39 @@ namespace devboost.dronedelivery.test.Security_Login
         }
 
         [Fact]
-        public void CheckPasswordUserAsnc()
+        public async Task CheckPasswordUserAsync()
         {
-            _loginValidator.CheckPasswordUserAsync(Arg.Any<ApplicationUser>(), Arg.Any<string>()).Returns(true);
+            var user = new ApplicationUser();
+            var contextAccessor = Substitute.For<IHttpContextAccessor>();
+            var claimsFactory = Substitute.For<IUserClaimsPrincipalFactory<ApplicationUser>>();
+            var logger = Substitute.For<ILogger<SignInManager<ApplicationUser>>>();
+            var schemes = Substitute.For<IAuthenticationSchemeProvider>();
+            var confirmation = Substitute.For<IUserConfirmation<ApplicationUser>>();
+            var signInManager = Substitute.For<SignInManager<ApplicationUser>>(_userManager, contextAccessor,
+                claimsFactory, _optionsAccessor, logger, schemes, confirmation);
+            var loginValidator = new LoginValidator(signInManager, _userManager);
+
+            await loginValidator.CheckPasswordUserAsync(user, "");
+
+            await signInManager.Received().CheckPasswordSignInAsync(Arg.Any<ApplicationUser>(), Arg.Any<string>(), Arg.Any<bool>());
+
         }
 
         [Fact]
-        public void GetUserById()
+        public async Task GetUserById()
         {
-            _loginValidator.GetUserById(Arg.Any<string>()).Returns(new ApplicationUser());
+            var contextAccessor = Substitute.For<IHttpContextAccessor>();
+            var claimsFactory = Substitute.For<IUserClaimsPrincipalFactory<ApplicationUser>>();
+            var logger = Substitute.For<ILogger<SignInManager<ApplicationUser>>>();
+            var schemes = Substitute.For<IAuthenticationSchemeProvider>();
+            var confirmation = Substitute.For<IUserConfirmation<ApplicationUser>>();
+            var signInManager = Substitute.For<SignInManager<ApplicationUser>>(_userManager, contextAccessor,
+                claimsFactory, _optionsAccessor, logger, schemes, confirmation);
+            var loginValidator = new LoginValidator(signInManager, _userManager);
+
+            await loginValidator.GetUserById("admin");
+
+            await _userManager.Received().FindByNameAsync(Arg.Any<string>());
         }
 
         [Fact]
@@ -102,7 +127,11 @@ namespace devboost.dronedelivery.test.Security_Login
                 claimsFactory, _optionsAccessor, logger, schemes, confirmation);
             var loginValidator = new LoginValidator(signInManager, _userManager);
             var user = new ApplicationUser();
+
+
             await loginValidator.ValidateRoleAsync(user, "admin");
+
+
             await _userManager.Received().IsInRoleAsync(Arg.Any<ApplicationUser>(), Arg.Any<string>());
         }
     }
