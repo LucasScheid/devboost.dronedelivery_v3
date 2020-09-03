@@ -6,6 +6,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>D:\Pessoais\devboost.dronedelivery\devboost.dronedelivery.felipe\devboost.dronedelivery.felipe\devboost.dronedelivery.felipe.xml</DocumentationFile>
+    <WarningsAsErrors>NU1605;CS1591</WarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>

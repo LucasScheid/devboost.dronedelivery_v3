@@ -6,12 +6,13 @@ using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
 using devboost.dronedelivery.felipe.Facade;
 using devboost.dronedelivery.felipe.Services;
 using devboost.dronedelivery.felipe.Services.Interfaces;
+using devboost.dronedelivery.test.Setup;
 using Microsoft.EntityFrameworkCore;
 using NSubstitute;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace devboost.dronedelivery.test
+namespace devboost.dronedelivery.test.Drone
 {
     public class AssignDroneTests
     {

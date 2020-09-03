@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace devboost.dronedelivery.test
+namespace devboost.dronedelivery.test.Setup
 {
     public static class SetupTests
     {

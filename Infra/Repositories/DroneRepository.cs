@@ -1,20 +1,17 @@
 ﻿using Dapper;
 using devboost.dronedelivery.felipe.DTO;
-using devboost.dronedelivery.felipe.DTO.Constants;
 using devboost.dronedelivery.felipe.DTO.Enums;
 using devboost.dronedelivery.felipe.DTO.Models;
 using devboost.dronedelivery.felipe.EF.Data;
 using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
-using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace devboost.dronedelivery.felipe.EF.Repositories
 {
-    public  class DroneStatusResult
+    public class DroneStatusResult
     {
         public int Id { get; set; }
 
@@ -35,14 +32,14 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
     public class DroneRepository : IDroneRepository
     {
         private readonly DataContext _context;
-        private readonly string _connectionString;
+        private readonly SqlConnection _sqlConnection;
 
         public DroneRepository(DataContext context,
-            IConfiguration configuration)
+          SqlConnection sqlConnection
+            )
         {
             _context = context;
-            _connectionString = configuration.GetConnectionString(ProjectConsts.CONNECTION_STRING_CONFIG);
-
+            _sqlConnection = sqlConnection;
         }
 
         public void SaveDrone(Drone drone)
@@ -58,17 +55,14 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
 
         public List<StatusDroneDto> GetDroneStatusAsync()
         {
-            using SqlConnection conexao = new SqlConnection(_connectionString);
-            var resultado =  conexao.Query<StatusDroneDto>(GetStatusSqlCommand());
+            var resultado = _sqlConnection.Query<StatusDroneDto>(GetStatusSqlCommand());
             return resultado.ToList();
         }
         public DroneStatusDto RetornaDroneStatus(int droneId)
         {
-            using SqlConnection conexao = new SqlConnection(_connectionString);
-
             DroneStatusDto droneStatusDto = null;
 
-            var consulta = conexao.Query<DroneStatusResult>(GetSqlCommand(droneId)).FirstOrDefault();
+            var consulta = _sqlConnection.Query<DroneStatusResult>(GetSqlCommand(droneId)).FirstOrDefault();
 
             if (consulta != null)
             {
@@ -93,7 +87,7 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
         private string GetSelectPedidos(int situacao, StatusEnvio status)
         {
             var stringBuilder = new StringBuilder();
-            
+
             stringBuilder.AppendLine("select a.DroneId,");
             stringBuilder.AppendLine($"{situacao} as Situacao,");
             stringBuilder.AppendLine(" a.Id as PedidoId,");

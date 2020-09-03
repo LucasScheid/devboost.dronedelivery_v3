@@ -25,20 +25,28 @@ using System.Reflection;
 
 namespace devboost.dronedelivery.felipe
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public class Startup
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
         private const string SWAGGERFILE_PATH = "./swagger/v1/swagger.json";
         private const string API_VERSION = "v1";
         private const string LOCALHOST = "http://localhost:80";
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public Startup(IConfiguration configuration)
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
         {
             Configuration = configuration;
         }
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public IConfiguration Configuration { get; }
-        
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
+
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public void ConfigureServices(IServiceCollection services)
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
         {
             services.AddScoped<IDroneRepository, DroneRepository>();
             services.AddScoped<IPedidoDroneRepository, PedidoDroneRepository>();
@@ -105,7 +113,9 @@ namespace devboost.dronedelivery.felipe
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
             ApplicationDbContext context,
             UserManager<ApplicationUser> userManager,
             RoleManager<IdentityRole> roleManager)

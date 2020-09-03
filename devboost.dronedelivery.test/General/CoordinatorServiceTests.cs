@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using devboost.dronedelivery.felipe.DTO.Extensions;
+using devboost.dronedelivery.test.Setup;
 
-namespace devboost.dronedelivery.test
+namespace devboost.dronedelivery.test.General
 {
     public class CoordinatorServiceTests
     {

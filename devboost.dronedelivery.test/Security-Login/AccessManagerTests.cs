@@ -1,6 +1,7 @@
 ﻿using devboost.dronedelivery.felipe.DTO.Models;
 using devboost.dronedelivery.felipe.Security;
 using devboost.dronedelivery.felipe.Security.Interfaces;
+using devboost.dronedelivery.test.Setup;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -14,7 +15,7 @@ using System.Configuration;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace devboost.dronedelivery.test
+namespace devboost.dronedelivery.test.Security_Login
 {
     public class AccessManagerTests
     {

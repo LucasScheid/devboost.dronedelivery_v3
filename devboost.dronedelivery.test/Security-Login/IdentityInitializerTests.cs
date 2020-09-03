@@ -1,19 +1,15 @@
 ﻿using devboost.dronedelivery.felipe.DTO.Models;
-using devboost.dronedelivery.felipe.EF.Data;
 using devboost.dronedelivery.felipe.Security;
 using devboost.dronedelivery.felipe.Security.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NSubstitute;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
-namespace devboost.dronedelivery.test
+namespace devboost.dronedelivery.test.Security_Login
 {
     public class IdentityInitializerTests
     {
