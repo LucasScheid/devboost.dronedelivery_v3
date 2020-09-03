@@ -20,12 +20,14 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Reflection;
 
 namespace devboost.dronedelivery.felipe
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+    [ExcludeFromCodeCoverage]
     public class Startup
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
