@@ -1,6 +1,7 @@
 ﻿using devboost.dronedelivery.felipe.DTO.Models;
 using devboost.dronedelivery.felipe.Security;
 using devboost.dronedelivery.felipe.Security.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using NSubstitute;
 using NSubstitute.ReceivedExtensions;
@@ -63,9 +64,14 @@ namespace devboost.dronedelivery.test
         }
 
         [Fact]
-        public void ValidateRoleAsnc()
+        public async Task ValidateRoleAsnc()
         {
-            _loginValidator.ValidateRoleAsnc(Arg.Any<ApplicationUser>(), Arg.Any<string>()).Returns(true);
+            var signInManager = Substitute.For<SignInManager<ApplicationUser>>();
+            var userManager = Substitute.For<UserManager<ApplicationUser>>();
+            var loginValidator = new LoginValidator(signInManager, userManager);
+            var user = new ApplicationUser();
+            await loginValidator.ValidateRoleAsnc(user, "admin");
+            await userManager.Received().IsInRoleAsync(Arg.Any<ApplicationUser>(), Arg.Any<string>());
         }
     }
 }

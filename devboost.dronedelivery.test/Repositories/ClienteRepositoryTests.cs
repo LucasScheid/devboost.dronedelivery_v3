@@ -25,8 +25,6 @@ namespace devboost.dronedelivery.test.Repositories
             await clienteRepository.SaveCliente(SetupTests.GetCliente());
             _context.Received().Cliente.Add(Arg.Any<felipe.DTO.Models.Cliente>());
             await _context.Received().SaveChangesAsync();
-
-
         }
     }
 }
