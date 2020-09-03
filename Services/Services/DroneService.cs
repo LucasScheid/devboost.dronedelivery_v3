@@ -97,12 +97,12 @@ namespace devboost.dronedelivery.felipe.Services
 
         public static bool ValidaPeso(DroneStatusDto droneStatus, Pedido pedido)
         {
-            return droneStatus.SomaPeso + pedido.Peso < droneStatus.Drone.Capacidade;
+            return droneStatus.SomaPeso + pedido.Peso <= droneStatus.Drone.Capacidade;
         }
 
         public static bool ValidaDistancia(DroneStatusDto droneStatus, double PedidoDroneDistance, double DistanciaRetorno)
         {
-            return droneStatus.SomaDistancia + DistanciaRetorno + PedidoDroneDistance < droneStatus.Drone.Perfomance;
+            return droneStatus.SomaDistancia + DistanciaRetorno + PedidoDroneDistance <= droneStatus.Drone.Perfomance;
         }
 
     }
