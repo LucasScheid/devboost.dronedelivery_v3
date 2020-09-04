@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CoverageSession>
-  <Summary numSequencePoints="685" visitedSequencePoints="565" numBranchPoints="62" visitedBranchPoints="42" sequenceCoverage="82.48" branchCoverage="67.74" maxCyclomaticComplexity="78" minCyclomaticComplexity="12" visitedClasses="52" numClasses="58" visitedMethods="118" numMethods="147" />
+  <Summary numSequencePoints="682" visitedSequencePoints="567" numBranchPoints="62" visitedBranchPoints="42" sequenceCoverage="83.13" branchCoverage="67.74" maxCyclomaticComplexity="78" minCyclomaticComplexity="12" visitedClasses="53" numClasses="58" visitedMethods="119" numMethods="146" />
   <Modules>
-    <Module hash="B3AC37FC-A757-4A8C-8AC2-D9FCCB960DE0">
+    <Module hash="C82D6EFE-BD74-47CF-9388-31868088E60C">
       <ModulePath>devboost.dronedelivery.felipe.dll</ModulePath>
-      <ModuleTime>2020-09-04T12:00:09</ModuleTime>
+      <ModuleTime>2020-09-04T12:07:27</ModuleTime>
       <ModuleName>devboost.dronedelivery.felipe</ModuleName>
       <Files>
         <File uid="1" fullPath="D:\Pessoais\devboost.dronedelivery_v3\Application\Controllers\ClienteController.cs" />
@@ -236,9 +236,9 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="C2E7CA7E-5D51-42E7-83E6-B82E74FCDB0A">
+    <Module hash="3079150C-59AB-454D-AE2F-92E7118B7FC4">
       <ModulePath>devboost.dronedelivery.felipe.DTO.dll</ModulePath>
-      <ModuleTime>2020-09-04T12:00:09</ModuleTime>
+      <ModuleTime>2020-09-04T12:07:27</ModuleTime>
       <ModuleName>devboost.dronedelivery.felipe.DTO</ModuleName>
       <Files>
         <File uid="5" fullPath="D:\Pessoais\devboost.dronedelivery_v3\Domain\DTO\DroneDTO.cs" />
@@ -611,7 +611,7 @@
               <Name>System.Int32 devboost.dronedelivery.felipe.DTO.Models.Cliente::get_Id()</Name>
               <FileRef uid="10" />
               <SequencePoints>
-                <SequencePoint vc="65" uspid="8" ordinal="0" sl="8" sc="1" el="8" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="67" uspid="8" ordinal="0" sl="8" sc="1" el="8" ec="2" bec="0" bev="0" fileid="10" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="8" ec="1" el="8" bec="0" bev="0" fileid="10" xmlns:p8="xsi" />
@@ -622,7 +622,7 @@
               <Name>System.String devboost.dronedelivery.felipe.DTO.Models.Cliente::get_Nome()</Name>
               <FileRef uid="10" />
               <SequencePoints>
-                <SequencePoint vc="57" uspid="9" ordinal="0" sl="9" sc="1" el="9" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="59" uspid="9" ordinal="0" sl="9" sc="1" el="9" ec="2" bec="0" bev="0" fileid="10" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="9" ec="1" el="9" bec="0" bev="0" fileid="10" xmlns:p8="xsi" />
@@ -633,7 +633,7 @@
               <Name>System.Double devboost.dronedelivery.felipe.DTO.Models.Cliente::get_Latitude()</Name>
               <FileRef uid="10" />
               <SequencePoints>
-                <SequencePoint vc="66" uspid="10" ordinal="0" sl="10" sc="1" el="10" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="68" uspid="10" ordinal="0" sl="10" sc="1" el="10" ec="2" bec="0" bev="0" fileid="10" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="10" ec="1" el="10" bec="0" bev="0" fileid="10" xmlns:p8="xsi" />
@@ -644,7 +644,7 @@
               <Name>System.Double devboost.dronedelivery.felipe.DTO.Models.Cliente::get_Longitude()</Name>
               <FileRef uid="10" />
               <SequencePoints>
-                <SequencePoint vc="66" uspid="11" ordinal="0" sl="11" sc="1" el="11" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="68" uspid="11" ordinal="0" sl="11" sc="1" el="11" ec="2" bec="0" bev="0" fileid="10" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="11" ec="1" el="11" bec="0" bev="0" fileid="10" xmlns:p8="xsi" />
@@ -655,7 +655,7 @@
               <Name>System.String devboost.dronedelivery.felipe.DTO.Models.Cliente::get_UserId()</Name>
               <FileRef uid="10" />
               <SequencePoints>
-                <SequencePoint vc="45" uspid="13" ordinal="0" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="47" uspid="13" ordinal="0" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="10" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="4" offset="4" sc="0" sl="13" ec="1" el="13" bec="0" bev="0" fileid="10" xmlns:p8="xsi" />
@@ -666,7 +666,7 @@
               <Name>System.String devboost.dronedelivery.felipe.DTO.Models.Cliente::get_Password()</Name>
               <FileRef uid="10" />
               <SequencePoints>
-                <SequencePoint vc="61" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="63" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="10" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="5" offset="5" sc="0" sl="14" ec="1" el="14" bec="0" bev="0" fileid="10" xmlns:p8="xsi" />
@@ -795,7 +795,7 @@
               <Name>System.Int32 devboost.dronedelivery.felipe.DTO.Models.Pedido::get_ClienteId()</Name>
               <FileRef uid="12" />
               <SequencePoints>
-                <SequencePoint vc="24" uspid="11" ordinal="0" sl="11" sc="1" el="11" ec="2" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="26" uspid="11" ordinal="0" sl="11" sc="1" el="11" ec="2" bec="0" bev="0" fileid="12" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="11" ec="1" el="11" bec="0" bev="0" fileid="12" xmlns:p8="xsi" />
@@ -806,7 +806,7 @@
               <Name>devboost.dronedelivery.felipe.DTO.Models.Cliente devboost.dronedelivery.felipe.DTO.Models.Pedido::get_Cliente()</Name>
               <FileRef uid="12" />
               <SequencePoints>
-                <SequencePoint vc="45" uspid="12" ordinal="0" sl="12" sc="1" el="12" ec="2" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="47" uspid="12" ordinal="0" sl="12" sc="1" el="12" ec="2" bec="0" bev="0" fileid="12" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="12" ec="1" el="12" bec="0" bev="0" fileid="12" xmlns:p8="xsi" />
@@ -817,7 +817,7 @@
               <Name>System.Int32 devboost.dronedelivery.felipe.DTO.Models.Pedido::get_Peso()</Name>
               <FileRef uid="12" />
               <SequencePoints>
-                <SequencePoint vc="25" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="27" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="12" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="14" ec="1" el="14" bec="0" bev="0" fileid="12" xmlns:p8="xsi" />
@@ -839,7 +839,7 @@
               <Name>System.Int32 devboost.dronedelivery.felipe.DTO.Models.Pedido::get_Situacao()</Name>
               <FileRef uid="12" />
               <SequencePoints>
-                <SequencePoint vc="24" uspid="18" ordinal="0" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="26" uspid="18" ordinal="0" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="12" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="5" offset="5" sc="0" sl="18" ec="1" el="18" bec="0" bev="0" fileid="12" xmlns:p8="xsi" />
@@ -1136,9 +1136,9 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="CEC7F6CF-73FD-428F-8E15-2056F0B900A7">
+    <Module hash="381DB07A-DF43-4EFF-B0DE-EC76DA9E7A54">
       <ModulePath>devboost.dronedelivery.felipe.EF.dll</ModulePath>
-      <ModuleTime>2020-09-04T12:00:09</ModuleTime>
+      <ModuleTime>2020-09-04T12:07:27</ModuleTime>
       <ModuleName>devboost.dronedelivery.felipe.EF</ModuleName>
       <Files>
         <File uid="19" fullPath="D:\Pessoais\devboost.dronedelivery_v3\Infra\Repositories\ClienteRepository.cs" />
@@ -1556,34 +1556,21 @@
           </Methods>
         </Class>
         <Class>
-          <Summary numSequencePoints="16" visitedSequencePoints="13" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="81.25" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="3" numMethods="4" />
+          <Summary numSequencePoints="13" visitedSequencePoints="13" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="3" numMethods="3" />
           <FullName>devboost.dronedelivery.felipe.EF.Repositories.PedidoRepository</FullName>
           <Methods>
-            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="3" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
-              <MetadataToken />
-              <Name>System.Void devboost.dronedelivery.felipe.EF.Repositories.PedidoRepository::Dispose()</Name>
-              <FileRef uid="22" />
-              <SequencePoints>
-                <SequencePoint vc="0" uspid="20" ordinal="0" sl="20" sc="1" el="20" ec="2" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="0" uspid="21" ordinal="1" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="0" uspid="22" ordinal="2" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="22" />
-              </SequencePoints>
-              <BranchPoints />
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="20" ec="1" el="22" bec="0" bev="0" fileid="22" xmlns:p8="xsi" />
-            </Method>
             <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
               <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
               <Name>devboost.dronedelivery.felipe.DTO.Models.Pedido devboost.dronedelivery.felipe.EF.Repositories.PedidoRepository::GetPedido(System.Int32)</Name>
               <FileRef uid="22" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="25" ordinal="0" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="1" uspid="26" ordinal="1" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="1" uspid="27" ordinal="2" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="1" uspid="20" ordinal="0" sl="20" sc="1" el="20" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="1" uspid="21" ordinal="1" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="1" uspid="22" ordinal="2" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="22" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="3" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="25" ec="1" el="27" bec="0" bev="0" fileid="22" xmlns:p8="xsi" />
+              <MethodPoint vc="3" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="20" ec="1" el="22" bec="0" bev="0" fileid="22" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
               <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -1591,15 +1578,15 @@
               <Name>System.Collections.Generic.List`1&lt;devboost.dronedelivery.felipe.DTO.Models.Pedido&gt; devboost.dronedelivery.felipe.EF.Repositories.PedidoRepository::ObterPedidos(System.Int32)</Name>
               <FileRef uid="22" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="30" ordinal="0" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="1" uspid="31" ordinal="1" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="4" uspid="32" ordinal="2" sl="32" sc="1" el="32" ec="2" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="1" uspid="33" ordinal="3" sl="33" sc="1" el="33" ec="2" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="1" uspid="35" ordinal="4" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="1" uspid="36" ordinal="5" sl="36" sc="1" el="36" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="1" uspid="25" ordinal="0" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="1" uspid="26" ordinal="1" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="4" uspid="27" ordinal="2" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="1" uspid="28" ordinal="3" sl="28" sc="1" el="28" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="1" uspid="30" ordinal="4" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="1" uspid="31" ordinal="5" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="22" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="6" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="30" ec="1" el="36" bec="0" bev="0" fileid="22" xmlns:p8="xsi" />
+              <MethodPoint vc="6" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="25" ec="1" el="31" bec="0" bev="0" fileid="22" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
               <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -1607,33 +1594,33 @@
               <Name>System.Void devboost.dronedelivery.felipe.EF.Repositories.PedidoRepository::.ctor(devboost.dronedelivery.felipe.EF.Data.DataContext)</Name>
               <FileRef uid="22" />
               <SequencePoints>
-                <SequencePoint vc="2" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="2" uspid="15" ordinal="1" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="2" uspid="16" ordinal="2" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="2" uspid="17" ordinal="3" sl="17" sc="1" el="17" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="3" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="3" uspid="15" ordinal="1" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="3" uspid="16" ordinal="2" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="3" uspid="17" ordinal="3" sl="17" sc="1" el="17" ec="2" bec="0" bev="0" fileid="22" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="4" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="14" ec="1" el="17" bec="0" bev="0" fileid="22" xmlns:p8="xsi" />
+              <MethodPoint vc="4" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="14" ec="1" el="17" bec="0" bev="0" fileid="22" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
         <Class>
-          <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="1" />
-          <FullName>devboost.dronedelivery.felipe.EF.Repositories.PedidoRepository/&lt;SavePedidoAsync&gt;d__5</FullName>
+          <Summary numSequencePoints="4" visitedSequencePoints="2" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="50" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>devboost.dronedelivery.felipe.EF.Repositories.PedidoRepository/&lt;SavePedidoAsync&gt;d__4</FullName>
           <Methods>
-            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="50" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="4" visitedSequencePoints="2" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="50" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
-              <Name>System.Void devboost.dronedelivery.felipe.EF.Repositories.PedidoRepository/&lt;SavePedidoAsync&gt;d__5::MoveNext()</Name>
+              <Name>System.Void devboost.dronedelivery.felipe.EF.Repositories.PedidoRepository/&lt;SavePedidoAsync&gt;d__4::MoveNext()</Name>
               <FileRef uid="22" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="39" ordinal="0" sl="39" sc="1" el="39" ec="2" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="0" uspid="40" ordinal="1" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="0" uspid="41" ordinal="2" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="0" uspid="42" ordinal="3" sl="42" sc="1" el="42" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="1" uspid="34" ordinal="0" sl="34" sc="1" el="34" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="1" uspid="35" ordinal="1" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="0" uspid="36" ordinal="2" sl="36" sc="1" el="36" ec="2" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="0" uspid="37" ordinal="3" sl="37" sc="1" el="37" ec="2" bec="0" bev="0" fileid="22" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="39" ec="1" el="42" bec="0" bev="0" fileid="22" xmlns:p8="xsi" />
+              <MethodPoint vc="2" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="34" ec="1" el="37" bec="0" bev="0" fileid="22" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
@@ -1669,7 +1656,7 @@
               <Name>Microsoft.EntityFrameworkCore.DbSet`1&lt;devboost.dronedelivery.felipe.DTO.Models.Pedido&gt; devboost.dronedelivery.felipe.EF.Data.DataContext::get_Pedido()</Name>
               <FileRef uid="24" />
               <SequencePoints>
-                <SequencePoint vc="29" uspid="18" ordinal="0" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="24" />
+                <SequencePoint vc="31" uspid="18" ordinal="0" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="24" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="18" ec="1" el="18" bec="0" bev="0" fileid="24" xmlns:p8="xsi" />
@@ -1680,7 +1667,7 @@
               <Name>Microsoft.EntityFrameworkCore.DbSet`1&lt;devboost.dronedelivery.felipe.DTO.Models.Cliente&gt; devboost.dronedelivery.felipe.EF.Data.DataContext::get_Cliente()</Name>
               <FileRef uid="24" />
               <SequencePoints>
-                <SequencePoint vc="27" uspid="20" ordinal="0" sl="20" sc="1" el="20" ec="2" bec="0" bev="0" fileid="24" />
+                <SequencePoint vc="28" uspid="20" ordinal="0" sl="20" sc="1" el="20" ec="2" bec="0" bev="0" fileid="24" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="20" ec="1" el="20" bec="0" bev="0" fileid="24" xmlns:p8="xsi" />
@@ -1691,7 +1678,7 @@
               <Name>Microsoft.EntityFrameworkCore.DbSet`1&lt;devboost.dronedelivery.felipe.DTO.Models.Drone&gt; devboost.dronedelivery.felipe.EF.Data.DataContext::get_Drone()</Name>
               <FileRef uid="24" />
               <SequencePoints>
-                <SequencePoint vc="25" uspid="22" ordinal="0" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="24" />
+                <SequencePoint vc="26" uspid="22" ordinal="0" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="24" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="22" ec="1" el="22" bec="0" bev="0" fileid="24" xmlns:p8="xsi" />
@@ -1702,7 +1689,7 @@
               <Name>Microsoft.EntityFrameworkCore.DbSet`1&lt;devboost.dronedelivery.felipe.DTO.Models.PedidoDrone&gt; devboost.dronedelivery.felipe.EF.Data.DataContext::get_PedidoDrones()</Name>
               <FileRef uid="24" />
               <SequencePoints>
-                <SequencePoint vc="28" uspid="24" ordinal="0" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="24" />
+                <SequencePoint vc="29" uspid="24" ordinal="0" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="24" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="24" ec="1" el="24" bec="0" bev="0" fileid="24" xmlns:p8="xsi" />
@@ -1726,9 +1713,9 @@
               <Name>System.Void devboost.dronedelivery.felipe.EF.Data.DataContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1&lt;devboost.dronedelivery.felipe.EF.Data.DataContext&gt;)</Name>
               <FileRef uid="24" />
               <SequencePoints>
-                <SequencePoint vc="6" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="24" />
-                <SequencePoint vc="6" uspid="15" ordinal="1" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="24" />
-                <SequencePoint vc="6" uspid="16" ordinal="2" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="24" />
+                <SequencePoint vc="7" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="24" />
+                <SequencePoint vc="7" uspid="15" ordinal="1" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="24" />
+                <SequencePoint vc="7" uspid="16" ordinal="2" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="24" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="3" uspid="0" p8:type="SequencePoint" ordinal="5" offset="5" sc="0" sl="14" ec="1" el="16" bec="0" bev="0" fileid="24" xmlns:p8="xsi" />
@@ -1737,9 +1724,9 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="C1500471-931B-4C17-B72D-CB2411D9A376">
+    <Module hash="4707950B-591C-4B42-AC10-DE51C07A2430">
       <ModulePath>devboost.dronedelivery.felipe.Facade.dll</ModulePath>
-      <ModuleTime>2020-09-04T12:00:09</ModuleTime>
+      <ModuleTime>2020-09-04T12:07:27</ModuleTime>
       <ModuleName>devboost.dronedelivery.felipe.Facade</ModuleName>
       <Files>
         <File uid="25" fullPath="D:\Pessoais\devboost.dronedelivery_v3\Domain\Facade\DroneFacade.cs" />
@@ -1948,9 +1935,9 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="1F053F7F-93F3-4CE0-B8C5-8A41D87D5301">
+    <Module hash="61A7A257-B4E1-453C-AB00-5AA5382357B9">
       <ModulePath>devboost.dronedelivery.felipe.Security.dll</ModulePath>
-      <ModuleTime>2020-09-04T12:00:09</ModuleTime>
+      <ModuleTime>2020-09-04T12:07:27</ModuleTime>
       <ModuleName>devboost.dronedelivery.felipe.Security</ModuleName>
       <Files>
         <File uid="27" fullPath="D:\Pessoais\devboost.dronedelivery_v3\Services\Security\AccessManager.cs" />
@@ -2402,9 +2389,9 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="37172927-EC50-4583-8C32-C71E4FC468F3">
+    <Module hash="320C995A-5948-4C18-BB01-4CB85C2C0781">
       <ModulePath>devboost.dronedelivery.felipe.Services.dll</ModulePath>
-      <ModuleTime>2020-09-04T12:00:09</ModuleTime>
+      <ModuleTime>2020-09-04T12:07:27</ModuleTime>
       <ModuleName>devboost.dronedelivery.felipe.Services</ModuleName>
       <Files>
         <File uid="33" fullPath="D:\Pessoais\devboost.dronedelivery_v3\Services\Services\CoordinatorService.cs" />

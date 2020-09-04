@@ -57,5 +57,13 @@ namespace devboost.dronedelivery.test.Repositories
             _context.Received().SaveChangesAsync();
 
         }
+
+        [Fact]
+        public void RetornaDroneStatusTests()
+        {
+            _droneStatusExecutor.ExcecuteCommand(Arg.Any<string>()).Returns(SetupTests.GetDroneStatusResults());
+            var droneStatus = _droneRepository.RetornaDroneStatus(1);
+            Assert.True(droneStatus != null);
+        }
     }
 }

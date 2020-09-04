@@ -45,30 +45,27 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
 
         public DroneStatusDto RetornaDroneStatus(int droneId)
         {
-
-            DroneStatusDto droneStatusDto = null;
-
             var consulta = _droneStatusExecutor.ExcecuteCommand(GetSqlCommand(droneId)).ToList();
-
             if (consulta.Any())
             {
                 var droneData = consulta.FirstOrDefault();
-                droneStatusDto = new DroneStatusDto();
+                return new DroneStatusDto
+                {
+                    Drone = new Drone()
+                    {
+                        Id = droneData.Id,
+                        Velocidade = droneData.Velocidade,
+                        Capacidade = droneData.Capacidade,
+                        Autonomia = droneData.Autonomia,
+                        Carga = droneData.Carga,
+                        Perfomance = droneData.Perfomance,
+                    },
+                    SomaPeso = droneData.SomaPeso,
+                    SomaDistancia = droneData.SomaDistancia,
 
-                droneStatusDto.Drone = new Drone();
-
-                droneStatusDto.Drone.Id = droneData.Id;
-                droneStatusDto.Drone.Velocidade = droneData.Velocidade;
-                droneStatusDto.Drone.Capacidade = droneData.Capacidade;
-                droneStatusDto.Drone.Autonomia = droneData.Autonomia;
-                droneStatusDto.Drone.Carga = droneData.Carga;
-                droneStatusDto.Drone.Perfomance = droneData.Perfomance;
-                droneStatusDto.SomaPeso = droneData.SomaPeso;
-                droneStatusDto.SomaDistancia = droneData.SomaDistancia;
-
+                };
             }
-
-            return droneStatusDto;
+            return new DroneStatusDto();
         }
 
         private string GetSelectPedidos(int situacao, StatusEnvio status)
