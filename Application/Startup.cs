@@ -1,3 +1,4 @@
+using devboost.dronedelivery.felipe.DTO;
 using devboost.dronedelivery.felipe.DTO.Constants;
 using devboost.dronedelivery.felipe.DTO.Models;
 using devboost.dronedelivery.felipe.EF.Data;
@@ -62,9 +63,14 @@ namespace devboost.dronedelivery.felipe
             services.AddScoped<ILoginValidator, LoginValidator>();
             services.AddScoped<IDroneRoleValidator, DroneRoleValidator>();
             services.AddScoped<IValidateDatabase, ValidateDatabse>();
-            // Configurando o uso da classe de contexto para
-            // acesso às tabelas do ASP.NET Identity Core
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddScoped<ICommandExecutor<DroneStatusResult>, CommandExecutor<DroneStatusResult>>();
+            services.AddScoped<ICommandExecutor<StatusDroneDto>, CommandExecutor<StatusDroneDto>>();
+
+        private readonly ICommandExecutor<StatusDroneDto> _statusDroneExecutor;
+
+        // Configurando o uso da classe de contexto para
+        // acesso às tabelas do ASP.NET Identity Core
+        services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseInMemoryDatabase("InMemoryDatabase"));
 
             // Ativando a utilização do ASP.NET Identity, a fim de
@@ -74,18 +80,18 @@ namespace devboost.dronedelivery.felipe
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            // Configurando a dependência para a classe de validação
-            // de credenciais e geração de tokens
-            services.AddScoped<AccessManager>();
+        // Configurando a dependência para a classe de validação
+        // de credenciais e geração de tokens
+        services.AddScoped<AccessManager>();
 
             var signingConfigurations = new SigningConfigurations();
-            services.AddSingleton(signingConfigurations);
+        services.AddSingleton(signingConfigurations);
 
             var tokenConfigurations = new TokenConfigurations();
-            new ConfigureFromConfigurationOptions<TokenConfigurations>(
-                Configuration.GetSection("TokenConfigurations"))
+        new ConfigureFromConfigurationOptions<TokenConfigurations>(
+            Configuration.GetSection("TokenConfigurations"))
                     .Configure(tokenConfigurations);
-            services.AddSingleton(tokenConfigurations);
+        services.AddSingleton(tokenConfigurations);
 
             // Aciona a extensão que irá configurar o uso de
             // autenticação e autorização via tokens
@@ -93,64 +99,64 @@ namespace devboost.dronedelivery.felipe
                 signingConfigurations, tokenConfigurations);
 
             services.AddDbContext<DataContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString(ProjectConsts.CONNECTION_STRING_CONFIG)), ServiceLifetime.Singleton);
+                    options.UseInMemoryDatabase("banco"), ServiceLifetime.Singleton);
             AddSwagger(services);
 
-            services.AddCors();
+        services.AddCors();
             services.AddControllers();
 
         }
 
-        private void AddSwagger(IServiceCollection services)
+    private void AddSwagger(IServiceCollection services)
+    {
+
+        services.AddSwaggerGen(c =>
         {
-
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc(API_VERSION, new OpenApiInfo { Title = ProjectConsts.PROJECT_NAME, Version = API_VERSION });
-                var xmlFile = Assembly.GetExecutingAssembly().GetName().Name + ProjectConsts.XML_EXTENSION;
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                c.IncludeXmlComments(xmlPath);
-            });
-        }
+            c.SwaggerDoc(API_VERSION, new OpenApiInfo { Title = ProjectConsts.PROJECT_NAME, Version = API_VERSION });
+            var xmlFile = Assembly.GetExecutingAssembly().GetName().Name + ProjectConsts.XML_EXTENSION;
+            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            c.IncludeXmlComments(xmlPath);
+        });
+    }
 
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
             ApplicationDbContext context,
-            UserManager<ApplicationUser> userManager,
-            RoleManager<IdentityRole> roleManager)
+        UserManager<ApplicationUser> userManager,
+        RoleManager<IdentityRole> roleManager)
+    {
+        if (env.IsDevelopment())
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
-            // Criação de estruturas, usuários e permissões
-            // na base do ASP.NET Identity Core (caso ainda não
-            // existam)
-            var droneRoleValidator = app.ApplicationServices.GetService<IDroneRoleValidator>();
-            var validateDatabase = app.ApplicationServices.GetService<IValidateDatabase>();
-
-            new IdentityInitializer(validateDatabase, userManager, droneRoleValidator).Initialize();
-
-            // Swagger
-            app.UseSwagger()
-               .UseSwaggerUI(c =>
-               {
-                   c.RoutePrefix = string.Empty;
-                   c.SwaggerEndpoint(SWAGGERFILE_PATH, ProjectConsts.PROJECT_NAME + API_VERSION);
-               });
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseDeveloperExceptionPage();
         }
+
+        // Criação de estruturas, usuários e permissões
+        // na base do ASP.NET Identity Core (caso ainda não
+        // existam)
+        var droneRoleValidator = app.ApplicationServices.GetService<IDroneRoleValidator>();
+        var validateDatabase = app.ApplicationServices.GetService<IValidateDatabase>();
+
+        new IdentityInitializer(validateDatabase, userManager, droneRoleValidator).Initialize();
+
+        // Swagger
+        app.UseSwagger()
+           .UseSwaggerUI(c =>
+           {
+               c.RoutePrefix = string.Empty;
+               c.SwaggerEndpoint(SWAGGERFILE_PATH, ProjectConsts.PROJECT_NAME + API_VERSION);
+           });
+
+        app.UseRouting();
+
+        app.UseAuthorization();
+
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllers();
+        });
     }
+}
 }
