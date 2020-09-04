@@ -66,7 +66,6 @@ namespace devboost.dronedelivery.felipe
             services.AddScoped<ICommandExecutor<DroneStatusResult>, CommandExecutor<DroneStatusResult>>();
             services.AddScoped<ICommandExecutor<StatusDroneDto>, CommandExecutor<StatusDroneDto>>();
 
-        private readonly ICommandExecutor<StatusDroneDto> _statusDroneExecutor;
 
         // Configurando o uso da classe de contexto para
         // acesso às tabelas do ASP.NET Identity Core
