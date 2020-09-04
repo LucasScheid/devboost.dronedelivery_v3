@@ -27,5 +27,13 @@ namespace devboost.dronedelivery.test.Repositories
             var pedido = GetRepository().ObterPedidos((int)StatusPedido.AGUARDANDO);
             Assert.True(pedido != null);
         }
+        [Fact]
+        public void SavePedidosTest()
+        {
+            var pedidoTests = SetupTests.GetPedido();
+            var pedido = GetRepository().SavePedidoAsync(pedidoTests);
+            Assert.True(pedido != null);
+        }
+
     }
 }
