@@ -16,11 +16,6 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
             _context = context;
         }
 
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
-
         public Pedido GetPedido(int id)
         {
             return _context.Find<Pedido>(id);
